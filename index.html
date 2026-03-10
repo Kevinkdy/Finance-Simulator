@@ -18,48 +18,52 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
 
-    .header { margin-bottom: 28px; }
+    .header { margin-bottom: 24px; }
     .header-tag { color: var(--amber); font-size: 11px; letter-spacing: .15em; margin-bottom: 6px; }
-    .header h1 { font-size: 24px; font-weight: 600; letter-spacing: -.02em; color: #0F172A; }
-    .header p { color: var(--gray); font-size: 12px; margin-top: 6px; }
+    .header h1 { font-size: 22px; font-weight: 700; letter-spacing: -.02em; color: #0F172A; }
+    .header p  { color: var(--gray); font-size: 12px; margin-top: 5px; }
 
-    .cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 28px; }
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
-    .card-label { color: var(--gray); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; }
-    .card-value { font-size: 20px; font-weight: 600; }
+    .cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 24px; }
+    .card  { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+    .card-label { color: var(--gray); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+    .card-value { font-size: 18px; font-weight: 700; }
 
-    .main { display: grid; grid-template-columns: 370px 1fr; gap: 24px; align-items: start; }
-    .left { display: flex; flex-direction: column; }
-    .right { display: flex; flex-direction: column; gap: 20px; }
+    .main { display: grid; grid-template-columns: 380px 1fr; gap: 20px; align-items: start; }
+    .left  { display: flex; flex-direction: column; }
+    .right { display: flex; flex-direction: column; gap: 18px; }
 
-    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
     .panel:last-child { margin-bottom: 0; }
-    .panel-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-    .panel-title { font-size: 11px; letter-spacing: .12em; font-weight: 600; color: var(--amber); }
+    .panel-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+    .panel-title { font-size: 10px; letter-spacing: .14em; font-weight: 700; text-transform: uppercase; color: var(--amber); }
     .panel-title.red    { color: var(--red); }
     .panel-title.blue   { color: var(--blue); }
     .panel-title.purple { color: var(--purple); }
+    .panel-title.teal   { color: #0D9488; }
 
-    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
     .field { display: flex; flex-direction: column; }
     .field.span2 { grid-column: 1 / -1; }
-    .field label { color: var(--gray); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
-    .iw { display: flex; align-items: center; gap: 6px; }
+    .field.span3 { grid-column: 1 / -1; }
+    .field label { color: var(--gray); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 3px; }
+    .iw { display: flex; align-items: center; gap: 5px; }
     .iw > span { color: var(--gray); font-size: 11px; white-space: nowrap; flex-shrink: 0; }
-    input[type=number] {
+    input[type=number], select {
       background: #F8FAFC; border: 1.5px solid #CBD5E1; color: var(--text);
-      font-family: var(--font); font-size: 13px; padding: 6px 10px;
+      font-family: var(--font); font-size: 12px; padding: 5px 9px;
       border-radius: 6px; width: 100%; outline: none; transition: border-color .15s, background .15s;
       -moz-appearance: textfield;
     }
-    input[type=number]:focus { border-color: var(--amber); background: #FFFBEB; }
+    select { cursor: pointer; }
+    input[type=number]:focus, select:focus { border-color: var(--amber); background: #FFFBEB; }
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
 
-    .phases-list { display: flex; flex-direction: column; gap: 10px; }
+    .phases-list { display: flex; flex-direction: column; gap: 9px; }
     .btn-add {
       background: transparent; border: 1.5px solid currentColor;
-      font-family: var(--font); font-size: 11px; padding: 4px 12px;
+      font-family: var(--font); font-size: 10px; padding: 3px 11px;
       border-radius: 5px; cursor: pointer; letter-spacing: .05em; transition: background .15s;
     }
     .btn-add.amber { color: var(--amber); }
@@ -67,74 +71,75 @@
     .btn-add.red { color: var(--red); }
     .btn-add.red:hover { background: rgba(220,38,38,.07); }
 
-    .phase-card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 12px; }
+    .phase-card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 11px; }
     .phase-card:hover { background: #F1F5F9; }
-    .phase-card-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-    .phase-lbl { font-size: 11px; font-weight: 600; letter-spacing: .04em; }
+    .phase-card-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 9px; }
+    .phase-lbl { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
     .phase-lbl.income  { color: var(--amber); }
     .phase-lbl.expense { color: var(--red); }
-    .btn-rm { background: none; border: none; color: #94A3B8; cursor: pointer; font-size: 16px; line-height: 1; padding: 0 4px; transition: color .15s; }
+    .btn-rm { background: none; border: none; color: #94A3B8; cursor: pointer; font-size: 15px; line-height: 1; padding: 0 3px; transition: color .15s; }
     .btn-rm:hover { color: var(--red); }
-    .phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .phase-grid input { font-size: 12px; padding: 5px 8px; }
+    .phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
 
-    .tip { margin-top: 12px; padding: 10px 12px; background: #F8FAFC; border-radius: 6px; border-left: 3px solid #CBD5E1; font-size: 11px; color: var(--gray); line-height: 1.7; }
-    .tip.blue   { border-left-color: #93C5FD; background: #EFF6FF; }
-    .tip.purple { border-left-color: #C4B5FD; background: #F5F3FF; }
-    .tip.red    { border-left-color: #FCA5A5; background: #FFF1F2; }
+    .tip { margin-top: 10px; padding: 9px 11px; background: #F8FAFC; border-radius: 6px; border-left: 3px solid #CBD5E1; font-size: 10px; color: var(--gray); line-height: 1.75; }
+    .tip.blue   { border-left-color: #93C5FD; background: #EFF6FF; color: #1D4ED8; }
+    .tip.purple { border-left-color: #C4B5FD; background: #F5F3FF; color: #5B21B6; }
+    .tip.red    { border-left-color: #FCA5A5; background: #FFF1F2; color: #B91C1C; }
+    .tip.teal   { border-left-color: #5EEAD4; background: #F0FDFA; color: #0F766E; }
 
-    .alloc-hdr { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
-    .alloc-hdr span { color: var(--gray); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; text-align: right; }
+    .alloc-hdr { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 7px; margin-bottom: 7px; }
+    .alloc-hdr span { color: var(--gray); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; text-align: right; }
     .alloc-hdr span:first-child { text-align: left; }
-    .alloc-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; align-items: center; margin-bottom: 8px; }
-    .alloc-label { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text); }
-    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .alloc-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 7px; align-items: center; margin-bottom: 7px; }
+    .alloc-label { display: flex; align-items: center; gap: 7px; font-size: 11px; color: var(--text); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 
-    .summary-row { margin-top: 12px; padding: 10px 14px; background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 7px; display: flex; justify-content: space-between; align-items: center; }
-    .summary-row .lbl { font-size: 11px; color: var(--gray); }
-    .summary-row .val { font-size: 15px; font-weight: 700; color: var(--amber); }
+    .summary-row { margin-top: 10px; padding: 9px 13px; background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 7px; display: flex; justify-content: space-between; align-items: center; }
+    .summary-row .lbl { font-size: 10px; color: var(--gray); }
+    .summary-row .val { font-size: 14px; font-weight: 700; color: var(--amber); }
 
-    .tax-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .tax-result { margin-top: 10px; background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 7px; padding: 10px 13px; }
+    .tax-result .row { display: flex; justify-content: space-between; font-size: 10px; padding: 2px 0; }
+    .tax-result .row .lbl { color: #3B82F6; }
+    .tax-result .row .val { color: #1D4ED8; font-weight: 600; }
 
-    .k401-summary { margin-top: 12px; padding: 10px 14px; background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 7px; }
-    .k401-summary .row { display: flex; justify-content: space-between; align-items: center; padding: 3px 0; font-size: 11px; }
-    .k401-summary .lbl { color: var(--gray); }
+    .k401-result { margin-top: 10px; background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 7px; padding: 10px 13px; }
+    .k401-result .row { display: flex; justify-content: space-between; font-size: 10px; padding: 2px 0; }
+    .k401-result .row .lbl { color: #7C3AED; }
+    .k401-result .row .val { color: #5B21B6; font-weight: 600; }
 
-    .chart-wrap { position: relative; height: 280px; }
-    .legend { display: flex; gap: 16px; margin-top: 10px; font-size: 11px; flex-wrap: wrap; color: var(--gray); }
+    .chart-wrap { position: relative; height: 270px; }
+    .legend { display: flex; gap: 14px; margin-top: 9px; font-size: 10px; flex-wrap: wrap; color: var(--gray); }
 
-    .table-scroll { max-height: 500px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; }
-    table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .table-scroll { max-height: 480px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; font-size: 10px; }
     thead th {
-      color: var(--dim); font-weight: 600; font-size: 10px; letter-spacing: .06em;
-      padding: 8px 8px; text-align: right; white-space: nowrap;
+      color: var(--dim); font-weight: 700; font-size: 9px; letter-spacing: .06em;
+      padding: 7px 7px; text-align: right; white-space: nowrap;
       border-bottom: 2px solid var(--border); position: sticky; top: 0;
-      background: #F8FAFC;
+      background: #F8FAFC; text-transform: uppercase;
     }
     thead th:first-child { text-align: left; padding-left: 12px; }
     tbody tr { border-bottom: 1px solid #F1F5F9; }
     tbody tr:hover td { background: #F8FAFC; }
-    tbody td { padding: 5px 8px; text-align: right; white-space: nowrap; color: var(--text); }
+    tbody td { padding: 4px 7px; text-align: right; white-space: nowrap; color: var(--text); }
     tbody td:first-child { text-align: left; padding-left: 12px; }
 
-    .notes { font-size: 11px; color: var(--gray); line-height: 2.1; }
-    .notes b { color: var(--dim); font-weight: 600; }
+    .notes { font-size: 10px; color: var(--gray); line-height: 2.1; }
+    .notes b { color: var(--dim); font-weight: 700; }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1050px) {
       .main  { grid-template-columns: 1fr; }
-      .cards { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 600px) {
-      .cards { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: repeat(3, 1fr); }
     }
   </style>
 </head>
 <body>
 
 <div class="header">
-  <div class="header-tag">FINANCIAL INDEPENDENCE SIMULATOR</div>
+  <div class="header-tag">FINANCIAL INDEPENDENCE SIMULATOR — US TAX EDITION</div>
   <h1>경제적 자유 시뮬레이터</h1>
-  <p>소득·소비 구간 · 자산배분 수익률 · 세금 · 401K 반영</p>
+  <p>연방 소득세 구간 · FICA · 자본이득세 · NIIT · 401K 납입 한도 · RMD 완전 반영</p>
 </div>
 
 <div class="cards">
@@ -151,6 +156,10 @@
     <div class="card-value" id="card-k401" style="color:var(--purple)">—</div>
   </div>
   <div class="card">
+    <div class="card-label">은퇴시점 총세금 부담</div>
+    <div class="card-value" id="card-tax" style="color:var(--red)">—</div>
+  </div>
+  <div class="card">
     <div class="card-label">자산 소진 나이</div>
     <div class="card-value" id="card-bankrupt" style="color:var(--green)">—</div>
   </div>
@@ -162,17 +171,17 @@
   <!-- 기본 설정 -->
   <div class="panel">
     <div class="panel-title">// 기본 설정</div>
-    <div class="grid2" style="margin-top:16px">
+    <div class="grid2" style="margin-top:14px">
       <div class="field">
         <label>현재 나이</label>
         <div class="iw"><input type="number" id="i-age" value="25" /><span>세</span></div>
       </div>
       <div class="field">
-        <label>목표 나이</label>
-        <div class="iw"><input type="number" id="i-target" value="50" /><span>세</span></div>
+        <label>목표 FI 나이</label>
+        <div class="iw"><input type="number" id="i-target" value="55" /><span>세</span></div>
       </div>
       <div class="field span2">
-        <label>현재 자산 (과세계좌)</label>
+        <label>현재 과세계좌 자산</label>
         <div class="iw"><input type="number" id="i-asset" value="1000" /><span>만원</span></div>
       </div>
       <div class="field">
@@ -183,9 +192,48 @@
         <label>인플레이션</label>
         <div class="iw"><input type="number" id="i-infl" value="2.5" step="0.1" /><span>%</span></div>
       </div>
-      <div class="field span2">
-        <label>소득 저축률 (세후 소득 중)</label>
-        <div class="iw"><input type="number" id="i-save" value="50" min="0" max="100" /><span>%</span></div>
+      <div class="field">
+        <label>소득 저축률 (세후)</label>
+        <div class="iw"><input type="number" id="i-save" value="40" min="0" max="100" /><span>%</span></div>
+      </div>
+      <div class="field">
+        <label>결혼 여부</label>
+        <select id="i-marry-mode">
+          <option value="never">평생 독신 (Single)</option>
+          <option value="age">특정 나이에 결혼</option>
+          <option value="already">이미 결혼 (MFJ)</option>
+        </select>
+      </div>
+      <div id="marry-age-field" style="display:none" class="field">
+        <label>결혼 나이</label>
+        <div class="iw"><input type="number" id="i-marry-age" value="32" min="18" max="80" /><span>세</span></div>
+      </div>
+      <div id="marry-status-display" style="margin-top:6px;padding:7px 10px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:6px;font-size:10px;color:#166534;display:none">
+        <span id="marry-status-text"></span>
+      </div>
+      <div class="field">
+        <label>거주 주 (State)</label>
+        <select id="i-state">
+          <option value="NY">New York (NY)</option>
+          <option value="NYC">New York City (NY+NYC)</option>
+          <option value="CA">California (CA)</option>
+          <option value="TX">Texas (TX) — 無주세</option>
+          <option value="FL">Florida (FL) — 無주세</option>
+          <option value="WA">Washington (WA) — 無주세</option>
+          <option value="IL">Illinois (IL)</option>
+          <option value="NJ">New Jersey (NJ)</option>
+          <option value="MA">Massachusetts (MA)</option>
+          <option value="PA">Pennsylvania (PA)</option>
+          <option value="OH">Ohio (OH)</option>
+          <option value="NC">North Carolina (NC)</option>
+          <option value="GA">Georgia (GA)</option>
+          <option value="VA">Virginia (VA)</option>
+          <option value="OTHER">기타 (직접 입력)</option>
+        </select>
+      </div>
+      <div class="field" id="custom-state-field" style="display:none">
+        <label>직접 입력 주 소득세율</label>
+        <div class="iw"><input type="number" id="i-state-tax-custom" value="5" step="0.1" /><span>%</span></div>
       </div>
     </div>
   </div>
@@ -193,64 +241,69 @@
   <!-- 자산 배분 -->
   <div class="panel">
     <div class="panel-title">// 자산 배분 &amp; 수익률</div>
-    <div class="alloc-hdr" style="margin-top:16px">
+    <div class="alloc-hdr" style="margin-top:14px">
       <span>자산 종류</span><span>비중</span><span>연 수익률</span>
     </div>
     <div class="alloc-row">
       <div class="alloc-label"><span class="dot" style="background:#3B82F6"></span>주식</div>
-      <div class="iw"><input type="number" id="a-stock-w" value="60" style="font-size:12px;padding:5px 8px" /><span>%</span></div>
-      <div class="iw"><input type="number" id="a-stock-r" value="9" step="0.1" style="font-size:12px;padding:5px 8px" /><span>%</span></div>
+      <div class="iw"><input type="number" id="a-stock-w" value="60" style="font-size:11px;padding:4px 7px" /><span>%</span></div>
+      <div class="iw"><input type="number" id="a-stock-r" value="9" step="0.1" style="font-size:11px;padding:4px 7px" /><span>%</span></div>
     </div>
     <div class="alloc-row">
       <div class="alloc-label"><span class="dot" style="background:#8B5CF6"></span>부동산</div>
-      <div class="iw"><input type="number" id="a-re-w" value="25" style="font-size:12px;padding:5px 8px" /><span>%</span></div>
-      <div class="iw"><input type="number" id="a-re-r" value="4" step="0.1" style="font-size:12px;padding:5px 8px" /><span>%</span></div>
+      <div class="iw"><input type="number" id="a-re-w" value="25" style="font-size:11px;padding:4px 7px" /><span>%</span></div>
+      <div class="iw"><input type="number" id="a-re-r" value="4" step="0.1" style="font-size:11px;padding:4px 7px" /><span>%</span></div>
     </div>
     <div class="alloc-row">
       <div class="alloc-label"><span class="dot" style="background:#10B981"></span>현금/채권</div>
-      <div class="iw"><input type="number" id="a-cash-w" value="15" style="font-size:12px;padding:5px 8px" /><span>%</span></div>
-      <div class="iw"><input type="number" id="a-cash-r" value="2" step="0.1" style="font-size:12px;padding:5px 8px" /><span>%</span></div>
+      <div class="iw"><input type="number" id="a-cash-w" value="15" style="font-size:11px;padding:4px 7px" /><span>%</span></div>
+      <div class="iw"><input type="number" id="a-cash-r" value="2" step="0.1" style="font-size:11px;padding:4px 7px" /><span>%</span></div>
     </div>
     <div class="summary-row">
       <span class="lbl">가중평균 수익률</span>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span id="weight-warn" style="font-size:10px;color:var(--red);display:none">⚠ 비중 합≠100%</span>
+      <div style="display:flex;align-items:center;gap:9px">
+        <span id="weight-warn" style="font-size:9px;color:var(--red);display:none">⚠ 비중 합≠100%</span>
         <span class="val" id="blended-rate">—</span>
       </div>
     </div>
   </div>
 
-  <!-- 세금 -->
+  <!-- 연방세 -->
   <div class="panel">
-    <div class="panel-title blue">// 세금 설정</div>
-    <div class="tax-grid" style="margin-top:16px">
-      <div class="field">
-        <label>실효 소득세율 (연방+주)</label>
-        <div class="iw"><input type="number" id="t-income" value="28" step="0.5" /><span>%</span></div>
-      </div>
-      <div class="field">
-        <label>FICA (사회보장+메디케어)</label>
-        <div class="iw"><input type="number" id="t-fica" value="7.65" step="0.05" /><span>%</span></div>
-      </div>
-      <div class="field">
-        <label>자본이득세율</label>
-        <div class="iw"><input type="number" id="t-capgain" value="15" step="0.5" /><span>%</span></div>
-      </div>
-      <div class="field">
-        <label>401K 인출세율</label>
-        <div class="iw"><input type="number" id="t-k401w" value="22" step="0.5" /><span>%</span></div>
+    <div class="panel-title blue">// 미국 연방세 + 주세 (2024 기준 자동 계산)</div>
+    <div class="tip blue" style="margin-top:14px">
+      📋 연방 소득세 · 주 소득세 모두 <b>누진세율 구간</b>으로 자동 계산됩니다.<br>
+      NY주 9구간 · NYC 시세 별도 · 표준공제 자동 적용<br>
+      FICA 임금상한 · NIIT 3.8% · 자본이득세 구간 모두 자동 반영
+    </div>
+    <div class="tax-result" id="tax-preview">
+      <div class="row"><span class="lbl">연방 소득세</span><span class="val" id="tp-federal">—</span></div>
+      <div class="row"><span class="lbl">주 소득세 <span id="tp-state-name" style="font-size:9px;opacity:.7"></span></span><span class="val" id="tp-state">—</span></div>
+      <div class="row"><span class="lbl">→ 주세 실효세율</span><span class="val" id="tp-state-eff" style="font-size:11px">—</span></div>
+      <div class="row"><span class="lbl">Social Security (6.2%, 상한 적용)</span><span class="val" id="tp-ss">—</span></div>
+      <div class="row"><span class="lbl">Medicare (1.45% + 추가 0.9%)</span><span class="val" id="tp-medicare">—</span></div>
+      <div class="row"><span class="lbl">자본이득세 + NIIT</span><span class="val" id="tp-capgain">—</span></div>
+      <div class="row" style="border-top:1px solid #BFDBFE;margin-top:4px;padding-top:4px">
+        <span class="lbl" style="font-weight:700">총 실효세율</span>
+        <span class="val" style="font-size:13px" id="tp-effective">—</span>
       </div>
     </div>
-    <div class="tip blue" style="margin-top:12px">
-      💡 미국 경제학 교수 기준 실효세율 약 28~32%<br>
-      FICA: Social Security 6.2% + Medicare 1.45%
+    <div class="grid2" style="margin-top:12px">
+      <div class="field">
+        <label>은퇴 후 인출세율 (401K)</label>
+        <div class="iw"><input type="number" id="t-k401w" value="22" step="0.5" /><span>%</span></div>
+      </div>
+      <div class="field">
+        <label>은퇴 후 주 소득세</label>
+        <div class="iw"><input type="number" id="t-retire-state" value="3" step="0.1" /><span>%</span></div>
+      </div>
     </div>
   </div>
 
   <!-- 401K -->
   <div class="panel">
     <div class="panel-title purple">// 401K / 403(b) 설정</div>
-    <div class="grid2" style="margin-top:16px">
+    <div class="grid2" style="margin-top:14px">
       <div class="field">
         <label>본인 기여율</label>
         <div class="iw"><input type="number" id="k-emp" value="10" step="0.5" /><span>%</span></div>
@@ -264,17 +317,19 @@
         <div class="iw"><input type="number" id="k-cap" value="10" step="0.5" /><span>%</span></div>
       </div>
       <div class="field">
-        <label>인출 시작 나이</label>
-        <div class="iw"><input type="number" id="k-age" value="60" /><span>세</span></div>
+        <label>RMD 시작 나이</label>
+        <div class="iw"><input type="number" id="k-rmd-age" value="73" /><span>세</span></div>
       </div>
     </div>
-    <div class="k401-summary" id="k401-summary">
-      <div class="row"><span class="lbl">총 기여율 (본인+고용주)</span><span id="k401-total-contrib" style="color:var(--purple);font-weight:600">—</span></div>
-      <div class="row"><span class="lbl">세금 절감 효과 (소득 대비)</span><span id="k401-tax-saving" style="color:var(--green);font-weight:600">—</span></div>
+    <div class="k401-result" id="k401-preview">
+      <div class="row"><span class="lbl">연간 본인 기여 (2024 상한 $23,000)</span><span class="val" id="kp-emp">—</span></div>
+      <div class="row"><span class="lbl">연간 고용주 매칭</span><span class="val" id="kp-match">—</span></div>
+      <div class="row"><span class="lbl">총 기여 (상한 $69,000)</span><span class="val" id="kp-total">—</span></div>
+      <div class="row"><span class="lbl">세전 절감 (연방+주)</span><span class="val" id="kp-saving">—</span></div>
     </div>
-    <div class="tip purple" style="margin-top:12px">
-      💡 미국 R1 대학 경제학 교수 기준 (TIAA 403b)<br>
-      고용주 자동 기여 <b>10%</b> (직원 5% 납입 시)
+    <div class="tip purple" style="margin-top:10px">
+      💡 2024 IRS 한도: 본인 $23,000 ($30,500 if 50+) · 합산 $69,000<br>
+      R1 대학 경제학 교수 기준 고용주 기여 10% (TIAA 403b)
     </div>
   </div>
 
@@ -285,7 +340,7 @@
       <button class="btn-add amber" id="btn-add-income">+ 추가</button>
     </div>
     <div class="phases-list" id="income-list"></div>
-    <div class="tip">💡 구간 외 나이는 소득 0원 · 401K 기여도 없음</div>
+    <div class="tip">💡 구간 외 나이는 소득 0원 · 401K 기여 없음</div>
   </div>
 
   <!-- 소비 구간 -->
@@ -304,10 +359,10 @@
 
   <div class="panel">
     <div class="panel-title">// 자산 곡선</div>
-    <div class="chart-wrap" style="margin-top:16px"><canvas id="chart"></canvas></div>
+    <div class="chart-wrap" style="margin-top:14px"><canvas id="chart"></canvas></div>
     <div class="legend">
       <span style="color:var(--amber)">▬ 총자산(세후)</span>
-      <span style="color:var(--purple)">— 401K</span>
+      <span style="color:var(--purple)">— 401K잔액</span>
       <span style="color:var(--green)">╌ 세후소득</span>
       <span style="color:var(--red)">╌ 연지출</span>
     </div>
@@ -315,13 +370,16 @@
 
   <div class="panel">
     <div class="panel-title">// 연도별 시뮬레이션</div>
-    <div class="table-scroll" style="margin-top:16px">
+    <div class="table-scroll" style="margin-top:14px">
       <table>
         <thead>
           <tr>
             <th>나이</th>
+            <th>신고</th>
             <th>세전소득</th>
-            <th>세금+FICA</th>
+            <th>연방세</th>
+            <th>주세+FICA</th>
+            <th>자본이득세</th>
             <th>401K기여</th>
             <th>세후저축</th>
             <th>투자수익</th>
@@ -339,14 +397,17 @@
   </div>
 
   <div class="panel">
-    <div class="panel-title">// 계산 방식</div>
+    <div class="panel-title">// 세금 계산 상세</div>
     <div class="notes" style="margin-top:12px">
-      <div>• <b>401K 기여</b>: 세전 공제 → 과세소득 감소. 고용주 매칭은 급여×매칭률 (상한 적용)</div>
-      <div>• <b>세금</b>: (세전소득 − 401K본인기여) × 실효세율 + 총소득 × FICA</div>
-      <div>• <b>투자수익</b>: 과세자산 × 가중평균수익률 × (1 − 자본이득세율)</div>
-      <div>• <b>401K</b>: 세전 복리 성장. 인출 시 인출세율 적용</div>
-      <div>• <b>총자산(세후)</b>: 과세자산 + 401K잔액 × (1 − 인출세율)</div>
-      <div>• <b>FI달성률</b>: 총자산(세후) × 세후수익률 / 연지출 × 100%</div>
+      <div>• <b>연방 소득세</b>: 2024 누진세율 구간 적용. 표준공제 차감 후 과세 (Single $14,600 / MFJ $29,200)</div>
+      <div>• <b>401K 공제</b>: 본인 기여분만큼 과세소득 감소. 연간 한도 $23,000 (50세 이상 $30,500) 자동 상한 적용</div>
+      <div>• <b>Social Security</b>: 6.2% × min(급여, $168,600). 임금 상한 초과분은 SS 면제</div>
+      <div>• <b>Medicare</b>: 1.45% 전액 + 소득 $200K(Single) 초과분 추가 0.9%</div>
+      <div>• <b>주 소득세</b>: 입력한 세율 × (총급여 − 401K 공제)</div>
+      <div>• <b>자본이득세</b>: 2024 구간 (0% / 15% / 20%) 과세소득 기준 자동 적용</div>
+      <div>• <b>NIIT 3.8%</b>: 투자소득이 $200K(Single) / $250K(MFJ) 초과 시 초과분에 추가 부과</div>
+      <div>• <b>RMD</b>: 73세부터 IRS Uniform Lifetime Table 기준 의무 인출. 인출액은 일반 소득으로 과세</div>
+      <div>• <b>401K 인출 (은퇴 후)</b>: 부족 생활비만큼 인출. (입력 인출세율 + 은퇴 후 주세) 적용</div>
     </div>
   </div>
 
@@ -354,11 +415,276 @@
 </div>
 
 <script>
-// ── 상수 ──
+// ─────────────────────────────────────────
+// 상수
+// ─────────────────────────────────────────
 const AMBER = '#D97706', GREEN = '#059669', RED = '#DC2626',
       GRAY = '#6B7280', PURPLE = '#7C3AED', BLUE = '#2563EB';
 
-// ── 상태 ──
+// 2024 연방 소득세 구간 (원단위: USD)
+const FED_BRACKETS = {
+  single: [
+    { up: 11600,  rate: 0.10 },
+    { up: 47150,  rate: 0.12 },
+    { up: 100525, rate: 0.22 },
+    { up: 191950, rate: 0.24 },
+    { up: 243725, rate: 0.32 },
+    { up: 609350, rate: 0.35 },
+    { up: Infinity, rate: 0.37 },
+  ],
+  mfj: [
+    { up: 23200,  rate: 0.10 },
+    { up: 94300,  rate: 0.12 },
+    { up: 201050, rate: 0.22 },
+    { up: 383900, rate: 0.24 },
+    { up: 487450, rate: 0.32 },
+    { up: 731200, rate: 0.35 },
+    { up: Infinity, rate: 0.37 },
+  ],
+};
+
+// 2024 자본이득세 구간 (과세소득 기준)
+const CAPGAIN_BRACKETS = {
+  single: [
+    { up: 47025,  rate: 0.00 },
+    { up: 518900, rate: 0.15 },
+    { up: Infinity, rate: 0.20 },
+  ],
+  mfj: [
+    { up: 94050,  rate: 0.00 },
+    { up: 583750, rate: 0.15 },
+    { up: Infinity, rate: 0.20 },
+  ],
+};
+
+const STD_DEDUCTION = { single: 14600, mfj: 29200 };
+const SS_WAGE_BASE  = 168600;
+const K401_LIMIT    = 23000;
+const K401_CATCHUP  = 30500;
+const K401_TOTAL    = 69000;
+const NIIT_THRESHOLD = { single: 200000, mfj: 250000 };
+const EXTRA_MEDICARE_THRESHOLD = { single: 200000, mfj: 250000 };
+
+// ── 주별 소득세 구간 (2024, USD 기준) ──
+// NY주 표준공제: Single $8,000 / MFJ $16,050
+const NY_STD_DED = { single: 8000, mfj: 16050 };
+const STATE_TAX = {
+  // New York State (주세만)
+  NY: {
+    name: 'New York State',
+    stdDed: NY_STD_DED,
+    brackets: {
+      single: [
+        { up: 17150,   rate: 0.04   },
+        { up: 23600,   rate: 0.045  },
+        { up: 27900,   rate: 0.0525 },
+        { up: 161550,  rate: 0.055  },
+        { up: 323200,  rate: 0.06   },
+        { up: 2155350, rate: 0.0685 },
+        { up: 5000000, rate: 0.0965 },
+        { up: 25000000,rate: 0.103  },
+        { up: Infinity,rate: 0.109  },
+      ],
+      mfj: [
+        { up: 27900,   rate: 0.04   },
+        { up: 43000,   rate: 0.045  },
+        { up: 161550,  rate: 0.0525 },
+        { up: 323200,  rate: 0.055  },
+        { up: 2155350, rate: 0.06   },
+        { up: 5000000, rate: 0.0685 },
+        { up: 25000000,rate: 0.0965 },
+        { up: Infinity,rate: 0.103  },
+      ],
+    },
+  },
+  // New York City (주세 + NYC 시세 합산)
+  NYC: {
+    name: 'New York City (주+시)',
+    stdDed: NY_STD_DED,
+    brackets: { // NY State brackets (same as NY)
+      single: [
+        { up: 17150,   rate: 0.04   },
+        { up: 23600,   rate: 0.045  },
+        { up: 27900,   rate: 0.0525 },
+        { up: 161550,  rate: 0.055  },
+        { up: 323200,  rate: 0.06   },
+        { up: 2155350, rate: 0.0685 },
+        { up: 5000000, rate: 0.0965 },
+        { up: 25000000,rate: 0.103  },
+        { up: Infinity,rate: 0.109  },
+      ],
+      mfj: [
+        { up: 27900,   rate: 0.04   },
+        { up: 43000,   rate: 0.045  },
+        { up: 161550,  rate: 0.0525 },
+        { up: 323200,  rate: 0.055  },
+        { up: 2155350, rate: 0.06   },
+        { up: 5000000, rate: 0.0685 },
+        { up: 25000000,rate: 0.0965 },
+        { up: Infinity,rate: 0.103  },
+      ],
+    },
+    // NYC 시세 별도 구간
+    cityBrackets: {
+      single: [
+        { up: 12000,  rate: 0.03078 },
+        { up: 25000,  rate: 0.03762 },
+        { up: 50000,  rate: 0.03819 },
+        { up: Infinity, rate: 0.03876 },
+      ],
+      mfj: [
+        { up: 21600,  rate: 0.03078 },
+        { up: 45000,  rate: 0.03762 },
+        { up: 90000,  rate: 0.03819 },
+        { up: Infinity, rate: 0.03876 },
+      ],
+    },
+  },
+  CA: {
+    name: 'California',
+    stdDed: { single: 5202, mfj: 10404 },
+    brackets: {
+      single: [
+        { up: 10412,  rate: 0.01   },
+        { up: 24684,  rate: 0.02   },
+        { up: 38959,  rate: 0.04   },
+        { up: 54081,  rate: 0.06   },
+        { up: 68350,  rate: 0.08   },
+        { up: 349137, rate: 0.093  },
+        { up: 418961, rate: 0.103  },
+        { up: 698274, rate: 0.113  },
+        { up: Infinity, rate: 0.123 },
+      ],
+      mfj: [
+        { up: 20824,  rate: 0.01   },
+        { up: 49368,  rate: 0.02   },
+        { up: 77918,  rate: 0.04   },
+        { up: 108162, rate: 0.06   },
+        { up: 136700, rate: 0.08   },
+        { up: 698274, rate: 0.093  },
+        { up: 837922, rate: 0.103  },
+        { up: Infinity, rate: 0.123 },
+      ],
+    },
+  },
+  TX:  { name: 'Texas (無주세)',       stdDed: { single: 0, mfj: 0 }, brackets: { single: [], mfj: [] } },
+  FL:  { name: 'Florida (無주세)',      stdDed: { single: 0, mfj: 0 }, brackets: { single: [], mfj: [] } },
+  WA:  { name: 'Washington (無주세)',   stdDed: { single: 0, mfj: 0 }, brackets: { single: [], mfj: [] } },
+  IL:  {
+    name: 'Illinois (flat 4.95%)',
+    stdDed: { single: 0, mfj: 0 },
+    flatRate: 0.0495,
+    brackets: { single: [{ up: Infinity, rate: 0.0495 }], mfj: [{ up: Infinity, rate: 0.0495 }] },
+  },
+  NJ: {
+    name: 'New Jersey',
+    stdDed: { single: 1000, mfj: 2000 },
+    brackets: {
+      single: [
+        { up: 20000,  rate: 0.014  },
+        { up: 35000,  rate: 0.0175 },
+        { up: 40000,  rate: 0.035  },
+        { up: 75000,  rate: 0.05525},
+        { up: 500000, rate: 0.0637 },
+        { up: 1000000,rate: 0.0897 },
+        { up: Infinity,rate: 0.1075},
+      ],
+      mfj: [
+        { up: 20000,  rate: 0.014  },
+        { up: 50000,  rate: 0.0175 },
+        { up: 70000,  rate: 0.0245 },
+        { up: 80000,  rate: 0.035  },
+        { up: 150000, rate: 0.05525},
+        { up: 500000, rate: 0.0637 },
+        { up: 1000000,rate: 0.0897 },
+        { up: Infinity,rate: 0.1075},
+      ],
+    },
+  },
+  MA: {
+    name: 'Massachusetts',
+    stdDed: { single: 4400, mfj: 8800 },
+    brackets: {
+      single: [
+        { up: 1000000, rate: 0.05   },
+        { up: Infinity,rate: 0.09   }, // Millionaire surtax
+      ],
+      mfj: [
+        { up: 1000000, rate: 0.05   },
+        { up: Infinity,rate: 0.09   },
+      ],
+    },
+  },
+  PA: {
+    name: 'Pennsylvania (flat 3.07%)',
+    stdDed: { single: 0, mfj: 0 },
+    brackets: { single: [{ up: Infinity, rate: 0.0307 }], mfj: [{ up: Infinity, rate: 0.0307 }] },
+  },
+  OH: {
+    name: 'Ohio',
+    stdDed: { single: 2400, mfj: 4800 },
+    brackets: {
+      single: [
+        { up: 26050,  rate: 0      },
+        { up: 46100,  rate: 0.02765},
+        { up: 92150,  rate: 0.03226},
+        { up: 115300, rate: 0.03688},
+        { up: Infinity,rate: 0.03990},
+      ],
+      mfj: [
+        { up: 26050,  rate: 0      },
+        { up: 46100,  rate: 0.02765},
+        { up: 92150,  rate: 0.03226},
+        { up: 115300, rate: 0.03688},
+        { up: Infinity,rate: 0.03990},
+      ],
+    },
+  },
+  NC: {
+    name: 'North Carolina (flat 4.5%)',
+    stdDed: { single: 12750, mfj: 25500 },
+    brackets: { single: [{ up: Infinity, rate: 0.045 }], mfj: [{ up: Infinity, rate: 0.045 }] },
+  },
+  GA: {
+    name: 'Georgia (flat 5.49%)',
+    stdDed: { single: 12000, mfj: 24000 },
+    brackets: { single: [{ up: Infinity, rate: 0.0549 }], mfj: [{ up: Infinity, rate: 0.0549 }] },
+  },
+  VA: {
+    name: 'Virginia',
+    stdDed: { single: 8000, mfj: 16000 },
+    brackets: {
+      single: [
+        { up: 3000,   rate: 0.02  },
+        { up: 5000,   rate: 0.03  },
+        { up: 17000,  rate: 0.05  },
+        { up: Infinity,rate: 0.0575},
+      ],
+      mfj: [
+        { up: 3000,   rate: 0.02  },
+        { up: 5000,   rate: 0.03  },
+        { up: 17000,  rate: 0.05  },
+        { up: Infinity,rate: 0.0575},
+      ],
+    },
+  },
+};
+
+// IRS Uniform Lifetime Table
+const RMD_TABLE = {
+  73:27.4, 74:26.5, 75:25.5, 76:24.5, 77:23.5, 78:22.5, 79:21.5,
+  80:20.2, 81:19.4, 82:18.5, 83:17.7, 84:16.8, 85:16.0, 86:15.2,
+  87:14.4, 88:13.7, 89:12.9, 90:12.2, 91:11.5, 92:10.8, 93:10.1,
+  94:9.5,  95:8.9,  96:8.4,  97:7.8,  98:7.3,  99:6.8,  100:6.4,
+};
+
+const KRW_PER_USD = 1350;
+function wanToUSD(wan) { return wan * 10000 / KRW_PER_USD; }
+function usdToWan(usd) { return usd * KRW_PER_USD / 10000; }
+
+// ─────────────────────────────────────────
+// 상태
+// ─────────────────────────────────────────
 let incomePhases = [
   { id: 1, startAge: 35, endAge: 45, salary: 5000, growth: 5 },
   { id: 2, startAge: 45, endAge: 65, salary: 8000, growth: 3 },
@@ -371,10 +697,16 @@ let expensePhases = [
 let incNextId = 3, expNextId = 4;
 let chartInst = null;
 
-// ── 헬퍼 ──
+// ─────────────────────────────────────────
+// 헬퍼
+// ─────────────────────────────────────────
 function n(id) {
   const el = document.getElementById(id);
   return el ? (parseFloat(el.value) || 0) : 0;
+}
+function s(id) {
+  const el = document.getElementById(id);
+  return el ? el.value : 'single';
 }
 function fmt(wan) {
   if (isNaN(wan) || wan === null) return '—';
@@ -383,8 +715,108 @@ function fmt(wan) {
   if (a >= 1)     return Math.round(wan).toLocaleString() + '만';
   return '0';
 }
+function fmtUSD(usd) {
+  if (!usd) return '$0';
+  if (Math.abs(usd) >= 1000000) return '$' + (usd / 1000000).toFixed(1) + 'M';
+  if (Math.abs(usd) >= 1000)    return '$' + Math.round(usd / 1000) + 'K';
+  return '$' + Math.round(usd).toLocaleString();
+}
 
-// ── 가중평균 수익률 ──
+// ─────────────────────────────────────────
+// 세금 계산 함수
+// ─────────────────────────────────────────
+function calcBracketTax(taxableIncome, brackets) {
+  let tax = 0, prev = 0;
+  for (const b of brackets) {
+    if (taxableIncome <= prev) break;
+    const chunk = Math.min(taxableIncome, b.up) - prev;
+    tax += chunk * b.rate;
+    prev = b.up;
+  }
+  return tax;
+}
+
+function capGainRate(ordinaryTaxableIncome, filing) {
+  const brackets = CAPGAIN_BRACKETS[filing];
+  for (const b of brackets) {
+    if (ordinaryTaxableIncome <= b.up) return b.rate;
+  }
+  return 0.20;
+}
+
+// 주 소득세 계산 (USD 기준, stateKey = 'NY'|'NYC'|'CA'...)
+function calcStateTax(grossUSD, filing, stateKey) {
+  if (stateKey === 'OTHER') {
+    const customRate = n('i-state-tax-custom') / 100;
+    return grossUSD * customRate;
+  }
+  const stateData = STATE_TAX[stateKey];
+  if (!stateData) return 0;
+  const stdDed   = stateData.stdDed[filing] || 0;
+  const taxable  = Math.max(0, grossUSD - stdDed);
+  const brackets = stateData.brackets[filing] || [];
+  let tax = calcBracketTax(taxable, brackets);
+  // NYC 시세 추가
+  if (stateKey === 'NYC' && stateData.cityBrackets) {
+    const cityBrackets = stateData.cityBrackets[filing] || [];
+    tax += calcBracketTax(taxable, cityBrackets);
+  }
+  return tax;
+}
+
+// 전체 세금 계산 (만원 입력 → 만원 출력)
+function calcTaxes(grossWan, investGainWan, filing, stateKey, age) {
+  const gross      = wanToUSD(grossWan);
+  const investGain = wanToUSD(investGainWan);
+  const stdDed     = STD_DEDUCTION[filing];
+
+  // 연방 소득세
+  const ordinaryTaxable = Math.max(0, gross - stdDed);
+  const fedTax = calcBracketTax(ordinaryTaxable, FED_BRACKETS[filing]);
+
+  // 주 소득세
+  const stateTaxUSD = calcStateTax(gross, filing, stateKey);
+
+  // Social Security
+  const ssTaxable = Math.min(gross, SS_WAGE_BASE);
+  const ssTax = ssTaxable * 0.062;
+
+  // Medicare
+  const medicareTax      = gross * 0.0145;
+  const extraMedicare    = Math.max(0, gross - EXTRA_MEDICARE_THRESHOLD[filing]) * 0.009;
+  const totalMedicare    = medicareTax + extraMedicare;
+
+  // 자본이득세
+  const cgRate = capGainRate(ordinaryTaxable, filing);
+  const cgTax  = Math.max(0, investGain) * cgRate;
+
+  // NIIT
+  const magi     = gross + Math.max(0, investGain);
+  const niitBase = Math.min(
+    Math.max(0, investGain),
+    Math.max(0, magi - NIIT_THRESHOLD[filing])
+  );
+  const niitTax = niitBase * 0.038;
+
+  const totalTaxUSD    = fedTax + stateTaxUSD + ssTax + totalMedicare + cgTax + niitTax;
+  const totalGrossUSD  = gross + Math.max(0, investGain);
+  const stateEffective = gross > 0 ? stateTaxUSD / gross : 0;
+
+  return {
+    federal:       usdToWan(fedTax),
+    state:         usdToWan(stateTaxUSD),
+    stateEffective,
+    ss:            usdToWan(ssTax),
+    medicare:      usdToWan(totalMedicare),
+    capgain:       usdToWan(cgTax + niitTax),
+    total:         usdToWan(totalTaxUSD),
+    effective:     totalGrossUSD > 0 ? totalTaxUSD / totalGrossUSD : 0,
+  };
+}
+
+// ─────────────────────────────────────────
+// 가중평균 수익률
+// ─────────────────────────────────────────
 function blendedRate() {
   const items = [
     { w: n('a-stock-w'), r: n('a-stock-r') },
@@ -392,138 +824,261 @@ function blendedRate() {
     { w: n('a-cash-w'),  r: n('a-cash-r')  },
   ];
   const tw = items.reduce((s, x) => s + x.w, 0);
-  const warn = document.getElementById('weight-warn');
-  const el   = document.getElementById('blended-rate');
-  if (!tw) { el.textContent = '—'; warn.style.display = 'none'; return 0; }
-  warn.style.display = Math.abs(tw - 100) > 0.01 ? 'block' : 'none';
+  document.getElementById('weight-warn').style.display = Math.abs(tw - 100) > 0.01 ? 'block' : 'none';
+  if (!tw) { document.getElementById('blended-rate').textContent = '—'; return 0; }
   const b = items.reduce((s, x) => s + (x.w / tw) * x.r, 0);
-  el.textContent = b.toFixed(2) + '%';
+  document.getElementById('blended-rate').textContent = b.toFixed(2) + '%';
   return b / 100;
 }
 
-// ── 401K 요약 갱신 ──
-function update401KSummary() {
-  const empPct   = n('k-emp');
-  const matchPct = n('k-match');
-  const capPct   = n('k-cap');
-  const taxRate  = n('t-income') / 100;
-  const total    = empPct + Math.min(matchPct, capPct);
-  document.getElementById('k401-total-contrib').textContent = total.toFixed(1) + '%';
-  document.getElementById('k401-tax-saving').textContent   = (empPct * taxRate).toFixed(2) + '%';
+// ─────────────────────────────────────────
+// 결혼 상태 헬퍼
+// ─────────────────────────────────────────
+function getFilingForAge(age) {
+  const mode = s('i-marry-mode');
+  if (mode === 'never')   return 'single';
+  if (mode === 'already') return 'mfj';
+  // 'age' mode
+  const marryAge = n('i-marry-age');
+  return age >= marryAge ? 'mfj' : 'single';
 }
 
-// ── 시뮬레이션 ──
-function simulate() {
-  const startAge   = n('i-age');
-  const taxableA0  = n('i-asset')     * 10000;
-  const k401A0     = n('i-k401-init') * 10000;
-  const inf        = n('i-infl')      / 100;
-  const ir         = blendedRate();
-  const incomeTaxR = n('t-income')  / 100;
-  const ficaR      = n('t-fica')    / 100;
-  const capGainR   = n('t-capgain') / 100;
-  const k401WR     = n('t-k401w')   / 100;
-  const empContrib = n('k-emp')     / 100;
-  const matchRate  = n('k-match')   / 100;
-  const matchCap   = n('k-cap')     / 100;
-  const k401Start  = n('k-age');
-  const savingsR   = n('i-save')    / 100;
+function updateMarryUI() {
+  const mode = s('i-marry-mode');
+  const ageField   = document.getElementById('marry-age-field');
+  const statusBox  = document.getElementById('marry-status-display');
+  const statusText = document.getElementById('marry-status-text');
+  const curAge     = n('i-age');
 
-  let taxableAsset = taxableA0;
-  let k401Balance  = k401A0;
+  ageField.style.display  = mode === 'age' ? 'flex' : 'none';
+  statusBox.style.display = 'block';
+
+  if (mode === 'never') {
+    statusText.textContent = '📋 전 기간 Single 신고로 계산됩니다.';
+    statusBox.style.background = '#F8FAFC';
+    statusBox.style.borderColor = '#E2E8F0';
+    statusBox.style.color = '#64748B';
+  } else if (mode === 'already') {
+    statusText.textContent = '💍 전 기간 Married Filing Jointly로 계산됩니다.';
+    statusBox.style.background = '#FFF7ED';
+    statusBox.style.borderColor = '#FED7AA';
+    statusBox.style.color = '#9A3412';
+  } else {
+    const marryAge = n('i-marry-age');
+    const filing   = getFilingForAge(curAge);
+    const label    = filing === 'mfj' ? 'Married Filing Jointly' : 'Single';
+    statusText.textContent =
+      '💍 만 ' + marryAge + '세부터 MFJ 적용 · 현재(' + curAge + '세) 신고: ' + label;
+    statusBox.style.background = '#F0FDF4';
+    statusBox.style.borderColor = '#BBF7D0';
+    statusBox.style.color = '#166534';
+  }
+}
+
+// ─────────────────────────────────────────
+// 미리보기 업데이트 (첫 소득 구간 기준)
+// ─────────────────────────────────────────
+function updatePreviews() {
+  updateMarryUI();
+  const age      = n('i-age');
+  const filing   = getFilingForAge(age);
+  const stateKey = s('i-state');
+  const empRate  = n('k-emp') / 100;
+  const matchRate = n('k-match') / 100;
+  const matchCap  = n('k-cap') / 100;
+
+  // 주 이름 표시
+  const stateData = STATE_TAX[stateKey];
+  const stateName = stateData ? stateData.name : stateKey;
+  document.getElementById('tp-state-name').textContent = '(' + stateName + ')';
+
+  const firstPhase = incomePhases[0];
+  if (!firstPhase || firstPhase.salary === 0) return;
+
+  const grossWan  = firstPhase.salary * 12;
+  const grossUSD  = wanToUSD(grossWan);
+  const limit     = age >= 50 ? K401_CATCHUP : K401_LIMIT;
+  const empContribUSD   = Math.min(grossUSD * empRate, limit);
+  const empContribWan   = usdToWan(empContribUSD);
+  const matchContribUSD = Math.min(grossUSD * matchRate, grossUSD * matchCap);
+  const totalContribUSD = Math.min(empContribUSD + matchContribUSD, K401_TOTAL);
+  const w2AfterWan      = usdToWan(grossUSD - empContribUSD);
+
+  const taxes = calcTaxes(w2AfterWan, 0, filing, stateKey, age);
+
+  document.getElementById('tp-federal').textContent   = fmt(taxes.federal);
+  document.getElementById('tp-state').textContent     = fmt(taxes.state);
+  document.getElementById('tp-state-eff').textContent = (taxes.stateEffective * 100).toFixed(2) + '%';
+  document.getElementById('tp-ss').textContent        = fmt(taxes.ss);
+  document.getElementById('tp-medicare').textContent  = fmt(taxes.medicare);
+  document.getElementById('tp-capgain').textContent   = fmt(taxes.capgain);
+  const totalTax = taxes.federal + taxes.state + taxes.ss + taxes.medicare + taxes.capgain;
+  document.getElementById('tp-effective').textContent = grossWan > 0 ? (totalTax / grossWan * 100).toFixed(1) + '%' : '—';
+
+  // 401K 미리보기 (세금 절감: 연방 실효세율 + 주 실효세율)
+  const combinedTaxRate = taxes.effective;
+  const taxSaving = empContribUSD * combinedTaxRate;
+  document.getElementById('kp-emp').textContent    = fmtUSD(empContribUSD) + ' / ' + fmt(empContribWan);
+  document.getElementById('kp-match').textContent  = fmtUSD(matchContribUSD) + ' / ' + fmt(usdToWan(matchContribUSD));
+  document.getElementById('kp-total').textContent  = fmtUSD(totalContribUSD);
+  document.getElementById('kp-saving').textContent = fmtUSD(taxSaving);
+}
+
+// ─────────────────────────────────────────
+// 시뮬레이션
+// ─────────────────────────────────────────
+function simulate() {
+  const startAge     = n('i-age');
+  const stateKey     = s('i-state');
+  const retireStateR = n('t-retire-state');
+  const k401WR       = n('t-k401w') / 100;
+  const inf          = n('i-infl') / 100;
+  const ir           = blendedRate();
+  const savingsR     = n('i-save') / 100;
+  const empRate      = n('k-emp') / 100;
+  const matchRate    = n('k-match') / 100;
+  const matchCap     = n('k-cap') / 100;
+  const rmdAge       = n('k-rmd-age') || 73;
+
+  let taxableAsset = n('i-asset') * 10000;
+  let k401Balance  = n('i-k401-init') * 10000;
   const rows = [];
 
   for (let age = startAge; age <= 100; age++) {
-    // 소득
-    let grossIncome = 0;
+    // ── 나이별 filing status (결혼 나이 반영) ──
+    const filing = getFilingForAge(age);
+    // ── 소득 ──
+    let grossWan = 0;
     for (const ph of incomePhases) {
       if (age >= ph.startAge && age < ph.endAge) {
-        grossIncome = ph.salary * 10000 * 12 * Math.pow(1 + ph.growth / 100, age - ph.startAge);
+        grossWan = ph.salary * 12 * Math.pow(1 + ph.growth / 100, age - ph.startAge);
         break;
       }
     }
 
-    // 401K 기여
-    const k401Emp   = grossIncome * empContrib;
-    const k401Match = grossIncome * Math.min(matchRate, matchCap);
-    const k401Total = k401Emp + k401Match;
+    // ── 401K 기여 (한도 적용) ──
+    const grossUSD   = wanToUSD(grossWan);
+    const empLimit   = age >= 50 ? K401_CATCHUP : K401_LIMIT;
+    const empUSD     = Math.min(grossUSD * empRate, empLimit);
+    const matchUSD   = Math.min(grossUSD * matchRate, grossUSD * matchCap);
+    const totalUSD   = Math.min(empUSD + matchUSD, K401_TOTAL);
+    const k401EmpWan   = usdToWan(empUSD);
+    const k401TotalWan = usdToWan(totalUSD);
 
-    // 세금
-    const taxableIncome  = Math.max(0, grossIncome - k401Emp);
-    const incomeTax      = taxableIncome * incomeTaxR;
-    const fica           = grossIncome * ficaR;
-    const totalTax       = incomeTax + fica;
+    // ── W-2 소득 (401K 공제 후) ──
+    const w2Wan = Math.max(0, grossWan - k401EmpWan);
 
-    // 세후 가처분소득
-    const afterTaxIncome = Math.max(0, grossIncome - k401Emp - totalTax);
+    // ── 과세계좌 투자수익 ──
+    const investGainRaw = taxableAsset * ir;
+
+    // ── 세금 계산 ──
+    const taxes = calcTaxes(w2Wan, investGainRaw / 10000, filing, stateKey, age);
+    const investGainAfterTax = investGainRaw - taxes.capgain * 10000;
+
+    // ── 세후 가처분소득 ──
+    const totalTaxWan    = taxes.federal + taxes.state + taxes.ss + taxes.medicare;
+    const afterTaxIncome = Math.max(0, w2Wan - totalTaxWan);
     const savings        = afterTaxIncome * savingsR;
     const nonSaved       = afterTaxIncome * (1 - savingsR);
 
-    // 소비 구간
-    let baseExpense = 0;
+    // ── 소비 ──
+    let baseExpenseWan = 0;
     for (const ph of expensePhases) {
       if (age >= ph.startAge && age < ph.endAge) {
-        baseExpense = ph.monthly * 10000 * 12 * Math.pow(1 + inf, age - ph.startAge);
+        baseExpenseWan = ph.monthly * 12 * Math.pow(1 + inf, age - ph.startAge);
         break;
       }
     }
-    const expense = baseExpense + nonSaved;
+    const expense = baseExpenseWan + nonSaved;
 
-    // 과세계좌 투자수익 (자본이득세 차감)
-    const taxableGain = taxableAsset * ir * (1 - capGainR);
-
-    // 401K 성장
+    // ── 401K 성장 ──
     const k401Gain = k401Balance * ir;
 
-    // 401K 인출 (은퇴 후 부족분 보충)
-    let k401Withdrawal = 0;
-    if (age >= k401Start && grossIncome === 0 && k401Balance > 0) {
-      const needed = Math.max(0, expense - (taxableGain + savings));
-      if (needed > 0) k401Withdrawal = Math.min(needed / (1 - k401WR), k401Balance);
+    // ── RMD 계산 ──
+    let rmdWan = 0;
+    if (age >= rmdAge && k401Balance > 0) {
+      const period = RMD_TABLE[Math.min(age, 100)] || 6.4;
+      rmdWan = k401Balance / period / 10000; // 만원
+      rmdWan = Math.min(rmdWan, k401Balance / 10000);
+      // RMD는 일반 소득으로 과세
+      const rmdTax = rmdWan * (k401WR + retireStateR / 100);
+      rmdWan = rmdWan - rmdTax; // 세후 RMD
     }
-    const k401AfterTax = k401Withdrawal * (1 - k401WR);
 
-    // 자산 갱신
-    taxableAsset += savings + taxableGain - expense + k401AfterTax;
+    // ── 은퇴 후 401K 추가 인출 ──
+    let k401ExtraWithdrawalWan = 0;
+    if (grossWan === 0 && k401Balance > 0) {
+      const availableTaxable = savings * 10000 + investGainAfterTax;
+      const shortfall = expense * 10000 - availableTaxable - rmdWan * 10000;
+      if (shortfall > 0) {
+        const rawWan = (shortfall / 10000) / (1 - k401WR - retireStateR / 100);
+        k401ExtraWithdrawalWan = Math.min(rawWan, k401Balance / 10000);
+      }
+    }
+    const k401ExtraAfterTax = k401ExtraWithdrawalWan * (1 - k401WR - retireStateR / 100);
+    const totalK401Withdrawal = (rmdWan + k401ExtraAfterTax); // 세후 합산 만원
+
+    // ── 자산 갱신 ──
+    const rmdRaw = k401Balance > 0 ? k401Balance / ((RMD_TABLE[Math.min(age, 100)] || 6.4)) : 0;
+    const k401ExtraRaw = k401ExtraWithdrawalWan * 10000;
+    taxableAsset = taxableAsset
+      + savings * 10000
+      + investGainAfterTax
+      - expense * 10000
+      + totalK401Withdrawal * 10000;
     if (taxableAsset < 0) taxableAsset = 0;
 
-    k401Balance += k401Total + k401Gain - k401Withdrawal;
+    k401Balance = k401Balance
+      + k401TotalWan * 10000
+      + k401Gain
+      - (age >= rmdAge ? rmdRaw : 0)
+      - k401ExtraRaw;
     if (k401Balance < 0) k401Balance = 0;
 
-    // 총자산 세후
-    const totalAfterTax = taxableAsset + k401Balance * (1 - k401WR);
-    const net           = savings + taxableGain + k401AfterTax - expense;
-    const effectiveIR   = ir * (1 - capGainR);
-    const fiRatio       = expense > 0 ? (totalAfterTax * effectiveIR) / expense : 0;
+    // ── 총자산 세후 ──
+    const totalAfterTax = taxableAsset + k401Balance * (1 - k401WR - retireStateR / 100);
+    const effectiveIR   = ir * (1 - (taxes.capgain / Math.max(investGainRaw / 10000, 0.001)));
+    const net           = savings * 10000 + investGainAfterTax + totalK401Withdrawal * 10000 - expense * 10000;
+    const fiRatio       = expense > 0 ? (totalAfterTax * ir * 0.85) / (expense * 10000) : 0;
 
     rows.push({
-      age, grossIncome, totalTax, k401Total, savings,
-      taxableGain, expense, net,
-      taxableAsset, k401Balance,
-      totalAfterTax: Math.max(totalAfterTax, 0),
-      totalRaw: totalAfterTax,
+      age,
+      filing,
+      grossWan,
+      federal:  taxes.federal,
+      statefica: taxes.state + taxes.ss + taxes.medicare,
+      capgainTax: taxes.capgain,
+      k401TotalWan,
+      savingsWan: savings,
+      investGainAfterTaxWan: investGainAfterTax / 10000,
+      expenseWan: expense,
+      net: net / 10000,
+      taxableAssetWan: taxableAsset / 10000,
+      k401BalanceWan:  k401Balance / 10000,
+      totalAfterTaxWan: Math.max(totalAfterTax, 0) / 10000,
+      totalRawWan: totalAfterTax / 10000,
       fiRatio,
+      allTax: (taxes.federal + taxes.state + taxes.ss + taxes.medicare + taxes.capgain),
     });
   }
   return rows;
 }
 
-// ── 차트 플러그인 (수직선) ──
+// ─────────────────────────────────────────
+// 차트 플러그인
+// ─────────────────────────────────────────
 const refLinesPlugin = {
   id: 'refLines',
   afterDatasetsDraw(chart, _, opts) {
     if (!opts || !opts.lines || !opts.lines.length) return;
     const { ctx, scales: { x, y } } = chart;
     ctx.save();
-    opts.lines.forEach((line, i) => {
+    opts.lines.forEach(function(line, i) {
       const px = x.getPixelForValue(line.value);
       if (px < x.left || px > x.right) return;
-      ctx.setLineDash([5, 3]);
-      ctx.lineWidth = 1.5;
-      ctx.strokeStyle = line.color;
+      ctx.setLineDash([5, 3]); ctx.lineWidth = 1.5; ctx.strokeStyle = line.color;
       ctx.beginPath(); ctx.moveTo(px, y.top); ctx.lineTo(px, y.bottom); ctx.stroke();
-      ctx.setLineDash([]);
-      ctx.fillStyle = line.color;
+      ctx.setLineDash([]); ctx.fillStyle = line.color;
       ctx.font = "10px 'IBM Plex Mono', monospace";
       ctx.fillText(line.label, px + 5, y.top + 14 + i * 16);
     });
@@ -532,7 +1087,9 @@ const refLinesPlugin = {
 };
 Chart.register(refLinesPlugin);
 
-// ── 차트 렌더 ──
+// ─────────────────────────────────────────
+// 렌더 함수들
+// ─────────────────────────────────────────
 function renderChart(rows) {
   const targetAge = n('i-target');
   const fiAge     = rows.find(r => r.fiRatio >= 1)?.age;
@@ -546,32 +1103,27 @@ function renderChart(rows) {
     labels: vis.map(r => r.age),
     datasets: [
       {
-        label: '총자산(세후)',
-        data: vis.map(r => Math.round(r.totalAfterTax / 10000)),
+        label: '총자산(세후)', data: vis.map(r => Math.round(r.totalAfterTaxWan)),
         borderColor: AMBER, borderWidth: 2,
         backgroundColor: function(ctx) {
-          const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, 280);
-          g.addColorStop(0, 'rgba(217,119,6,.18)');
-          g.addColorStop(1, 'rgba(217,119,6,0)');
+          const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, 270);
+          g.addColorStop(0, 'rgba(217,119,6,.15)'); g.addColorStop(1, 'rgba(217,119,6,0)');
           return g;
         },
         fill: true, tension: 0.4, pointRadius: 0, order: 1,
       },
       {
-        label: '401K잔액',
-        data: vis.map(r => Math.round(r.k401Balance / 10000)),
+        label: '401K잔액', data: vis.map(r => Math.round(r.k401BalanceWan)),
         borderColor: PURPLE, borderWidth: 1.5, borderDash: [4, 2],
         backgroundColor: 'transparent', fill: false, tension: 0.4, pointRadius: 0, order: 2,
       },
       {
-        label: '세후소득',
-        data: vis.map(r => Math.round((r.grossIncome - r.totalTax - r.k401Total) / 10000)),
+        label: '세후소득', data: vis.map(r => Math.round((r.grossWan - r.federal - r.statefica - r.k401TotalWan))),
         borderColor: GREEN, borderWidth: 1.5, borderDash: [4, 2],
         backgroundColor: 'transparent', fill: false, tension: 0.3, pointRadius: 0, order: 3,
       },
       {
-        label: '연지출',
-        data: vis.map(r => Math.round(r.expense / 10000)),
+        label: '연지출', data: vis.map(r => Math.round(r.expenseWan)),
         borderColor: RED, borderWidth: 1.5, borderDash: [4, 2],
         backgroundColor: 'transparent', fill: false, tension: 0.3, pointRadius: 0, order: 4,
       },
@@ -589,11 +1141,10 @@ function renderChart(rows) {
         titleFont: { family: "'IBM Plex Mono'", size: 11 },
         bodyFont:  { family: "'IBM Plex Mono'", size: 11 },
         callbacks: {
-          title: function(items) { return '만 ' + items[0].label + '세'; },
-          label: function(item) {
-            const v = item.raw;
-            const s = Math.abs(v) >= 10000 ? (v / 10000).toFixed(1) + '억' : v.toLocaleString() + '만';
-            return ' ' + item.dataset.label + ': ' + s + '원';
+          title: function(i) { return '만 ' + i[0].label + '세'; },
+          label: function(i) {
+            const v = i.raw;
+            return ' ' + i.dataset.label + ': ' + (Math.abs(v) >= 10000 ? (v/10000).toFixed(1) + '억' : v.toLocaleString() + '만') + '원';
           }
         }
       },
@@ -607,93 +1158,103 @@ function renderChart(rows) {
       },
       y: {
         border: { display: false }, grid: { color: '#F1F5F9' },
-        ticks: {
-          color: GRAY, font: { family: "'IBM Plex Mono'", size: 10 },
-          callback: function(v) { return Math.abs(v) >= 10000 ? (v / 10000).toFixed(0) + '억' : v.toLocaleString() + '만'; }
-        }
+        ticks: { color: GRAY, font: { family: "'IBM Plex Mono'", size: 10 },
+          callback: function(v) { return Math.abs(v) >= 10000 ? (v/10000).toFixed(0) + '억' : v.toLocaleString() + '만'; } }
       }
     }
   };
 
-  if (chartInst) {
-    chartInst.data    = chartData;
-    chartInst.options = chartOpts;
-    chartInst.update('none');
-  } else {
-    chartInst = new Chart(document.getElementById('chart'), { type: 'line', data: chartData, options: chartOpts });
-  }
+  if (chartInst) { chartInst.data = chartData; chartInst.options = chartOpts; chartInst.update('none'); }
+  else { chartInst = new Chart(document.getElementById('chart'), { type: 'line', data: chartData, options: chartOpts }); }
 }
 
-// ── 테이블 렌더 ──
 function renderTable(rows) {
-  const targetAge = n('i-target');
-  const fiAge     = rows.find(r => r.fiRatio >= 1)?.age;
-  const tbody     = document.getElementById('tbody');
-  tbody.innerHTML = '';
+  const targetAge  = n('i-target');
+  const marryMode  = s('i-marry-mode');
+  const marryAge   = n('i-marry-age');
+  const fiAge      = rows.find(r => r.fiRatio >= 1)?.age;
+  const tbody      = document.getElementById('tbody');
+  tbody.innerHTML  = '';
 
-  rows.forEach(function(r) {
-    const isFI       = !!(fiAge && r.age === fiAge);
-    const isTgt      = r.age === targetAge;
-    const isBankrupt = r.totalRaw < 0;
-    const fiPct      = r.fiRatio * 100;
+  rows.forEach(function(r, idx) {
+    const isFI    = !!(fiAge && r.age === fiAge);
+    const isTgt   = r.age === targetAge;
+    const isBk    = r.totalRawWan < 0;
+    const fiPct   = r.fiRatio * 100;
+    // 결혼 전환 시점 (바로 결혼하는 해)
+    const isMarryYear = marryMode === 'age' && r.age === marryAge;
 
     const tr = document.createElement('tr');
-    if (isFI)       tr.style.background = '#ECFDF5';
-    else if (isTgt) tr.style.background = '#FFFBEB';
+    if (isMarryYear) tr.style.borderTop = '2px solid #F59E0B';
+    if (isFI)        tr.style.background = '#ECFDF5';
+    else if (isTgt)  tr.style.background = '#FFFBEB';
+    else if (isMarryYear) tr.style.background = '#FFFBEB';
 
-    const ageLbl  = r.age + '세' + (isFI ? ' ✓FI' : isTgt ? ' ★' : '');
-    const ageClr  = isFI ? GREEN : isTgt ? AMBER : '#1E293B';
-    const fiClr   = fiPct >= 100 ? GREEN : fiPct >= 70 ? AMBER : GRAY;
-    const netClr  = r.net >= 0 ? GREEN : RED;
-    const totalTxt = isBankrupt ? '<span style="color:' + RED + '">파산</span>' : fmt(r.totalAfterTax / 10000);
+    const ageClr    = isFI ? GREEN : isTgt ? AMBER : '#1E293B';
+    const fiClr     = fiPct >= 100 ? GREEN : fiPct >= 70 ? AMBER : GRAY;
+    const netClr    = r.net >= 0 ? GREEN : RED;
+    const ageLbl    = r.age + '세' + (isFI ? ' ✓FI' : isTgt ? ' ★' : isMarryYear ? ' 💍' : '');
+    const totTxt    = isBk ? '<span style="color:' + RED + '">파산</span>' : fmt(r.totalAfterTaxWan);
+    const filingLbl = r.filing === 'mfj'
+      ? '<span style="color:#D97706;font-size:9px;font-weight:700">MFJ</span>'
+      : '<span style="color:#6B7280;font-size:9px">S</span>';
 
     tr.innerHTML =
-      '<td style="color:' + ageClr + ';font-weight:' + (isFI || isTgt ? 600 : 400) + '">' + ageLbl + '</td>' +
-      '<td>' + fmt(r.grossIncome / 10000) + '</td>' +
-      '<td style="color:' + RED + '">' + fmt(r.totalTax / 10000) + '</td>' +
-      '<td style="color:' + PURPLE + '">' + fmt(r.k401Total / 10000) + '</td>' +
-      '<td style="color:' + GREEN + '">' + fmt(r.savings / 10000) + '</td>' +
-      '<td style="color:' + AMBER + '">' + fmt(r.taxableGain / 10000) + '</td>' +
-      '<td style="color:#64748B">' + fmt(r.expense / 10000) + '</td>' +
-      '<td style="color:' + netClr + ';font-weight:500">' + fmt(r.net / 10000) + '</td>' +
-      '<td>' + fmt(r.taxableAsset / 10000) + '</td>' +
-      '<td style="color:' + PURPLE + '">' + fmt(r.k401Balance / 10000) + '</td>' +
-      '<td style="color:' + (isBankrupt ? RED : '#0F172A') + ';font-weight:600">' + totalTxt + '</td>' +
-      '<td style="color:' + fiClr + ';font-weight:' + (fiPct >= 100 ? 600 : 400) + '">' + Math.round(fiPct) + '%</td>';
-
+      '<td style="color:' + ageClr + ';font-weight:' + (isFI||isTgt?700:400) + '">' + ageLbl + '</td>' +
+      '<td style="text-align:center">' + filingLbl + '</td>' +
+      '<td>' + fmt(r.grossWan) + '</td>' +
+      '<td style="color:' + RED + '">' + fmt(r.federal) + '</td>' +
+      '<td style="color:#DC4626">' + fmt(r.statefica) + '</td>' +
+      '<td style="color:#B45309">' + fmt(r.capgainTax) + '</td>' +
+      '<td style="color:' + PURPLE + '">' + fmt(r.k401TotalWan) + '</td>' +
+      '<td style="color:' + GREEN + '">' + fmt(r.savingsWan) + '</td>' +
+      '<td style="color:' + AMBER + '">' + fmt(r.investGainAfterTaxWan) + '</td>' +
+      '<td style="color:#64748B">' + fmt(r.expenseWan) + '</td>' +
+      '<td style="color:' + netClr + ';font-weight:500">' + fmt(r.net) + '</td>' +
+      '<td>' + fmt(r.taxableAssetWan) + '</td>' +
+      '<td style="color:' + PURPLE + '">' + fmt(r.k401BalanceWan) + '</td>' +
+      '<td style="font-weight:700;color:' + (isBk ? RED : '#0F172A') + '">' + totTxt + '</td>' +
+      '<td style="color:' + fiClr + ';font-weight:' + (fiPct>=100?700:400) + '">' + Math.round(fiPct) + '%</td>';
     tbody.appendChild(tr);
   });
 }
 
-// ── 카드 렌더 ──
 function renderCards(rows) {
   const fiAge    = rows.find(r => r.fiRatio >= 1)?.age;
-  const bkAge    = rows.find(r => r.totalRaw < 0)?.age;
-  const maxTotal = Math.max.apply(null, rows.map(r => r.totalAfterTax));
-  const maxK401  = Math.max.apply(null, rows.map(r => r.k401Balance));
+  const bkAge    = rows.find(r => r.totalRawWan < 0)?.age;
+  const maxTotal = Math.max.apply(null, rows.map(r => r.totalAfterTaxWan));
+  const maxK401  = Math.max.apply(null, rows.map(r => r.k401BalanceWan));
+  const retireRow = rows.find(r => r.grossWan === 0 && r.age > n('i-age'));
+  const retireTax = retireRow ? retireRow.allTax : 0;
 
   const cFi = document.getElementById('card-fi');
   cFi.textContent = fiAge ? '만 ' + fiAge + '세' : '미달성';
   cFi.style.color = fiAge ? GREEN : GRAY;
 
-  document.getElementById('card-max').textContent  = fmt(maxTotal / 10000);
-  document.getElementById('card-k401').textContent = fmt(maxK401 / 10000);
+  document.getElementById('card-max').textContent  = fmt(maxTotal);
+  document.getElementById('card-k401').textContent = fmt(maxK401);
+  document.getElementById('card-tax').textContent  = retireTax > 0 ? fmt(retireTax) + '/년' : '—';
 
   const cBk = document.getElementById('card-bankrupt');
   cBk.textContent = bkAge ? '만 ' + bkAge + '세' : '100세 유지';
   cBk.style.color = bkAge ? RED : GREEN;
 }
 
-// ── 전체 업데이트 ──
+// ─────────────────────────────────────────
+// 마스터 업데이트
+// ─────────────────────────────────────────
 function update() {
-  update401KSummary();
+  blendedRate();
+  updatePreviews();
   const rows = simulate();
   renderCards(rows);
   renderChart(rows);
   renderTable(rows);
 }
 
-// ── 소득 구간 UI ──
+// ─────────────────────────────────────────
+// 구간 UI
+// ─────────────────────────────────────────
 function renderIncomePhases() {
   const list = document.getElementById('income-list');
   list.innerHTML = '';
@@ -702,7 +1263,7 @@ function renderIncomePhases() {
     d.className = 'phase-card';
     d.innerHTML =
       '<div class="phase-card-hdr">' +
-        '<span class="phase-lbl income">소득 구간 ' + (i + 1) + '</span>' +
+        '<span class="phase-lbl income">소득 구간 ' + (i+1) + '</span>' +
         (incomePhases.length > 1 ? '<button class="btn-rm" data-type="income" data-id="' + ph.id + '">×</button>' : '') +
       '</div>' +
       '<div class="phase-grid">' +
@@ -715,7 +1276,6 @@ function renderIncomePhases() {
   });
 }
 
-// ── 소비 구간 UI ──
 function renderExpensePhases() {
   const list = document.getElementById('expense-list');
   list.innerHTML = '';
@@ -725,7 +1285,7 @@ function renderExpensePhases() {
     d.style.borderColor = '#FECACA';
     d.innerHTML =
       '<div class="phase-card-hdr">' +
-        '<span class="phase-lbl expense">소비 구간 ' + (i + 1) + '</span>' +
+        '<span class="phase-lbl expense">소비 구간 ' + (i+1) + '</span>' +
         (expensePhases.length > 1 ? '<button class="btn-rm" data-type="expense" data-id="' + ph.id + '">×</button>' : '') +
       '</div>' +
       '<div class="phase-grid">' +
@@ -737,17 +1297,17 @@ function renderExpensePhases() {
   });
 }
 
-// ── 이벤트 위임 ──
+// ─────────────────────────────────────────
+// 이벤트
+// ─────────────────────────────────────────
 document.getElementById('income-list').addEventListener('input', function(e) {
-  const inp = e.target;
-  if (!inp.dataset.id) return;
+  const inp = e.target; if (!inp.dataset.id) return;
   const id = parseInt(inp.dataset.id), key = inp.dataset.key, v = parseFloat(inp.value) || 0;
-  incomePhases = incomePhases.map(function(p) { return p.id === id ? Object.assign({}, p, { [key]: v }) : p; });
+  incomePhases = incomePhases.map(function(p) { return p.id === id ? Object.assign({}, p, {[key]: v}) : p; });
   update();
 });
 document.getElementById('income-list').addEventListener('click', function(e) {
-  const btn = e.target.closest('.btn-rm[data-type="income"]');
-  if (!btn) return;
+  const btn = e.target.closest('.btn-rm[data-type="income"]'); if (!btn) return;
   incomePhases = incomePhases.filter(function(p) { return p.id !== parseInt(btn.dataset.id); });
   renderIncomePhases(); update();
 });
@@ -759,15 +1319,13 @@ document.getElementById('btn-add-income').addEventListener('click', function() {
 });
 
 document.getElementById('expense-list').addEventListener('input', function(e) {
-  const inp = e.target;
-  if (!inp.dataset.id) return;
+  const inp = e.target; if (!inp.dataset.id) return;
   const id = parseInt(inp.dataset.id), key = inp.dataset.key, v = parseFloat(inp.value) || 0;
-  expensePhases = expensePhases.map(function(p) { return p.id === id ? Object.assign({}, p, { [key]: v }) : p; });
+  expensePhases = expensePhases.map(function(p) { return p.id === id ? Object.assign({}, p, {[key]: v}) : p; });
   update();
 });
 document.getElementById('expense-list').addEventListener('click', function(e) {
-  const btn = e.target.closest('.btn-rm[data-type="expense"]');
-  if (!btn) return;
+  const btn = e.target.closest('.btn-rm[data-type="expense"]'); if (!btn) return;
   expensePhases = expensePhases.filter(function(p) { return p.id !== parseInt(btn.dataset.id); });
   renderExpensePhases(); update();
 });
@@ -778,18 +1336,36 @@ document.getElementById('btn-add-expense').addEventListener('click', function() 
   renderExpensePhases(); update();
 });
 
-// 기본 인풋들
+// 결혼 모드 토글
+document.getElementById('i-marry-mode').addEventListener('change', function() {
+  updateMarryUI();
+  update();
+});
+
+// 기타(직접입력) 상태 토글
+document.getElementById('i-state').addEventListener('change', function() {
+  const isOther = this.value === 'OTHER';
+  document.getElementById('custom-state-field').style.display = isOther ? 'flex' : 'none';
+  update();
+});
+
 [
-  'i-age', 'i-target', 'i-asset', 'i-k401-init', 'i-infl', 'i-save',
-  'a-stock-w', 'a-stock-r', 'a-re-w', 'a-re-r', 'a-cash-w', 'a-cash-r',
-  't-income', 't-fica', 't-capgain', 't-k401w',
-  'k-emp', 'k-match', 'k-cap', 'k-age'
+  'i-age','i-target','i-asset','i-k401-init','i-infl','i-save',
+  'i-marry-age','i-state-tax-custom',
+  'a-stock-w','a-stock-r','a-re-w','a-re-r','a-cash-w','a-cash-r',
+  't-k401w','t-retire-state',
+  'k-emp','k-match','k-cap','k-rmd-age'
 ].forEach(function(id) {
   const el = document.getElementById(id);
   if (el) el.addEventListener('input', update);
+  if (el && el.tagName === 'SELECT') el.addEventListener('change', update);
 });
 
-// ── 초기화 ──
+document.getElementById('i-filing') && document.getElementById('i-filing').addEventListener('change', update);
+
+// ─────────────────────────────────────────
+// 초기화
+// ─────────────────────────────────────────
 renderIncomePhases();
 renderExpensePhases();
 update();
