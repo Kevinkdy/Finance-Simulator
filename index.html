@@ -10,7 +10,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --amber: #D97706; --green: #059669; --red: #DC2626; --blue: #2563EB;
-      --purple: #7C3AED; --gray: #6B7280; --bg: #F8FAFC; --surface: #FFFFFF;
+      --purple: #7C3AED; --gray: #6B7280; --bg: #F1F5F9; --surface: #FFFFFF;
       --border: #E2E8F0; --text: #1E293B; --dim: #475569; --font: 'IBM Plex Mono', monospace;
     }
     body { background: var(--bg); color: var(--text); font-family: var(--font); min-height: 100vh; padding: 32px 24px 80px; }
@@ -28,14 +28,14 @@
     .card-label { color: var(--gray); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; }
     .card-value { font-size: 20px; font-weight: 600; }
 
-    .main { display: grid; grid-template-columns: 360px 1fr; gap: 24px; align-items: start; }
+    .main { display: grid; grid-template-columns: 370px 1fr; gap: 24px; align-items: start; }
     .left { display: flex; flex-direction: column; }
     .right { display: flex; flex-direction: column; gap: 20px; }
 
-    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
     .panel:last-child { margin-bottom: 0; }
     .panel-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-    .panel-title { color: var(--amber); font-size: 11px; letter-spacing: .12em; }
+    .panel-title { font-size: 11px; letter-spacing: .12em; font-weight: 600; color: var(--amber); }
     .panel-title.red    { color: var(--red); }
     .panel-title.blue   { color: var(--blue); }
     .panel-title.purple { color: var(--purple); }
@@ -45,80 +45,80 @@
     .field.span2 { grid-column: 1 / -1; }
     .field label { color: var(--gray); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
     .iw { display: flex; align-items: center; gap: 6px; }
-    .iw span { color: var(--gray); font-size: 11px; white-space: nowrap; }
+    .iw > span { color: var(--gray); font-size: 11px; white-space: nowrap; flex-shrink: 0; }
     input[type=number] {
-      background: #F8FAFC; border: 1px solid #CBD5E1; color: var(--text);
+      background: #F8FAFC; border: 1.5px solid #CBD5E1; color: var(--text);
       font-family: var(--font); font-size: 13px; padding: 6px 10px;
-      border-radius: 6px; width: 100%; outline: none; transition: border-color .15s;
+      border-radius: 6px; width: 100%; outline: none; transition: border-color .15s, background .15s;
       -moz-appearance: textfield;
     }
     input[type=number]:focus { border-color: var(--amber); background: #FFFBEB; }
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
 
-    .phases-list { display: flex; flex-direction: column; gap: 12px; }
+    .phases-list { display: flex; flex-direction: column; gap: 10px; }
     .btn-add {
-      background: transparent; border: 1px solid currentColor;
+      background: transparent; border: 1.5px solid currentColor;
       font-family: var(--font); font-size: 11px; padding: 4px 12px;
-      border-radius: 4px; cursor: pointer; letter-spacing: .05em; transition: background .15s;
+      border-radius: 5px; cursor: pointer; letter-spacing: .05em; transition: background .15s;
     }
     .btn-add.amber { color: var(--amber); }
     .btn-add.amber:hover { background: rgba(217,119,6,.08); }
     .btn-add.red { color: var(--red); }
-    .btn-add.red:hover { background: rgba(220,38,38,.08); }
+    .btn-add.red:hover { background: rgba(220,38,38,.07); }
 
-    .phase-card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 14px; transition: background .15s; }
+    .phase-card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 12px; }
     .phase-card:hover { background: #F1F5F9; }
     .phase-card-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-    .phase-lbl { font-size: 12px; font-weight: 500; }
+    .phase-lbl { font-size: 11px; font-weight: 600; letter-spacing: .04em; }
     .phase-lbl.income  { color: var(--amber); }
     .phase-lbl.expense { color: var(--red); }
-    .btn-rm { background: none; border: none; color: var(--red); cursor: pointer; font-size: 18px; line-height: 1; padding: 0 4px; opacity: .4; transition: opacity .15s; font-family: var(--font); }
-    .btn-rm:hover { opacity: 1; }
-    .phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn-rm { background: none; border: none; color: #94A3B8; cursor: pointer; font-size: 16px; line-height: 1; padding: 0 4px; transition: color .15s; }
+    .btn-rm:hover { color: var(--red); }
+    .phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .phase-grid input { font-size: 12px; padding: 5px 8px; }
-    .tip { margin-top: 12px; padding: 10px; background: #F1F5F9; border-radius: 6px; font-size: 11px; color: var(--gray); line-height: 1.7; border-left: 2px solid #CBD5E1; }
 
-    /* asset alloc table */
+    .tip { margin-top: 12px; padding: 10px 12px; background: #F8FAFC; border-radius: 6px; border-left: 3px solid #CBD5E1; font-size: 11px; color: var(--gray); line-height: 1.7; }
+    .tip.blue   { border-left-color: #93C5FD; background: #EFF6FF; }
+    .tip.purple { border-left-color: #C4B5FD; background: #F5F3FF; }
+    .tip.red    { border-left-color: #FCA5A5; background: #FFF1F2; }
+
     .alloc-hdr { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
     .alloc-hdr span { color: var(--gray); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; text-align: right; }
     .alloc-hdr span:first-child { text-align: left; }
     .alloc-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; align-items: center; margin-bottom: 8px; }
     .alloc-label { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text); }
-    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; display: inline-block; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 
-    .summary-row { margin-top: 12px; padding: 10px 12px; background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
+    .summary-row { margin-top: 12px; padding: 10px 14px; background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 7px; display: flex; justify-content: space-between; align-items: center; }
     .summary-row .lbl { font-size: 11px; color: var(--gray); }
-    .summary-row .val { font-size: 15px; font-weight: 600; color: var(--amber); }
+    .summary-row .val { font-size: 15px; font-weight: 700; color: var(--amber); }
 
-    /* tax row */
     .tax-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-    /* 401k summary */
-    .k401-summary { margin-top: 12px; padding: 10px 12px; background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 6px; }
+    .k401-summary { margin-top: 12px; padding: 10px 14px; background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 7px; }
     .k401-summary .row { display: flex; justify-content: space-between; align-items: center; padding: 3px 0; font-size: 11px; }
-    .k401-summary .row .lbl { color: var(--gray); }
+    .k401-summary .lbl { color: var(--gray); }
 
-    /* chart */
     .chart-wrap { position: relative; height: 280px; }
-    .legend { display: flex; gap: 16px; margin-top: 10px; font-size: 11px; flex-wrap: wrap; }
+    .legend { display: flex; gap: 16px; margin-top: 10px; font-size: 11px; flex-wrap: wrap; color: var(--gray); }
 
-    /* table */
-    .table-scroll { max-height: 500px; overflow-y: auto; }
+    .table-scroll { max-height: 500px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; }
     table { width: 100%; border-collapse: collapse; font-size: 11px; }
     thead th {
-      color: var(--gray); font-weight: 500; font-size: 10px; letter-spacing: .06em;
-      padding: 6px 8px; text-align: right; white-space: nowrap;
-      border-bottom: 2px solid var(--border); position: sticky; top: 0; background: var(--surface);
+      color: var(--dim); font-weight: 600; font-size: 10px; letter-spacing: .06em;
+      padding: 8px 8px; text-align: right; white-space: nowrap;
+      border-bottom: 2px solid var(--border); position: sticky; top: 0;
+      background: #F8FAFC;
     }
-    thead th:first-child { text-align: left; }
+    thead th:first-child { text-align: left; padding-left: 12px; }
     tbody tr { border-bottom: 1px solid #F1F5F9; }
     tbody tr:hover td { background: #F8FAFC; }
-    tbody td { padding: 4px 8px; text-align: right; white-space: nowrap; }
-    tbody td:first-child { text-align: left; }
+    tbody td { padding: 5px 8px; text-align: right; white-space: nowrap; color: var(--text); }
+    tbody td:first-child { text-align: left; padding-left: 12px; }
 
-    .notes { font-size: 11px; color: var(--gray); line-height: 2; }
-    .notes b { color: var(--dim); font-weight: 500; }
+    .notes { font-size: 11px; color: var(--gray); line-height: 2.1; }
+    .notes b { color: var(--dim); font-weight: 600; }
 
     @media (max-width: 1000px) {
       .main  { grid-template-columns: 1fr; }
@@ -162,7 +162,7 @@
   <!-- 기본 설정 -->
   <div class="panel">
     <div class="panel-title">// 기본 설정</div>
-    <div class="grid2">
+    <div class="grid2" style="margin-top:16px">
       <div class="field">
         <label>현재 나이</label>
         <div class="iw"><input type="number" id="i-age" value="25" /><span>세</span></div>
@@ -183,34 +183,38 @@
         <label>인플레이션</label>
         <div class="iw"><input type="number" id="i-infl" value="2.5" step="0.1" /><span>%</span></div>
       </div>
+      <div class="field span2">
+        <label>소득 저축률 (세후 소득 중)</label>
+        <div class="iw"><input type="number" id="i-save" value="50" min="0" max="100" /><span>%</span></div>
+      </div>
     </div>
   </div>
 
-  <!-- 자산 배분 & 수익률 -->
+  <!-- 자산 배분 -->
   <div class="panel">
     <div class="panel-title">// 자산 배분 &amp; 수익률</div>
-    <div class="alloc-hdr">
+    <div class="alloc-hdr" style="margin-top:16px">
       <span>자산 종류</span><span>비중</span><span>연 수익률</span>
     </div>
     <div class="alloc-row">
-      <div class="alloc-label"><span class="dot" style="background:#60A5FA"></span>주식</div>
+      <div class="alloc-label"><span class="dot" style="background:#3B82F6"></span>주식</div>
       <div class="iw"><input type="number" id="a-stock-w" value="60" style="font-size:12px;padding:5px 8px" /><span>%</span></div>
       <div class="iw"><input type="number" id="a-stock-r" value="9" step="0.1" style="font-size:12px;padding:5px 8px" /><span>%</span></div>
     </div>
     <div class="alloc-row">
-      <div class="alloc-label"><span class="dot" style="background:#A78BFA"></span>부동산</div>
+      <div class="alloc-label"><span class="dot" style="background:#8B5CF6"></span>부동산</div>
       <div class="iw"><input type="number" id="a-re-w" value="25" style="font-size:12px;padding:5px 8px" /><span>%</span></div>
       <div class="iw"><input type="number" id="a-re-r" value="4" step="0.1" style="font-size:12px;padding:5px 8px" /><span>%</span></div>
     </div>
     <div class="alloc-row">
-      <div class="alloc-label"><span class="dot" style="background:#34D399"></span>현금/채권</div>
+      <div class="alloc-label"><span class="dot" style="background:#10B981"></span>현금/채권</div>
       <div class="iw"><input type="number" id="a-cash-w" value="15" style="font-size:12px;padding:5px 8px" /><span>%</span></div>
       <div class="iw"><input type="number" id="a-cash-r" value="2" step="0.1" style="font-size:12px;padding:5px 8px" /><span>%</span></div>
     </div>
     <div class="summary-row">
       <span class="lbl">가중평균 수익률</span>
-      <div style="display:flex;align-items:center;gap:10px;">
-        <span id="weight-warn" style="font-size:10px;color:var(--red);display:none;">⚠ 비중 합≠100%</span>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span id="weight-warn" style="font-size:10px;color:var(--red);display:none">⚠ 비중 합≠100%</span>
         <span class="val" id="blended-rate">—</span>
       </div>
     </div>
@@ -219,7 +223,7 @@
   <!-- 세금 -->
   <div class="panel">
     <div class="panel-title blue">// 세금 설정</div>
-    <div class="tax-grid">
+    <div class="tax-grid" style="margin-top:16px">
       <div class="field">
         <label>실효 소득세율 (연방+주)</label>
         <div class="iw"><input type="number" id="t-income" value="28" step="0.5" /><span>%</span></div>
@@ -229,24 +233,24 @@
         <div class="iw"><input type="number" id="t-fica" value="7.65" step="0.05" /><span>%</span></div>
       </div>
       <div class="field">
-        <label>자본이득세율 (과세계좌)</label>
+        <label>자본이득세율</label>
         <div class="iw"><input type="number" id="t-capgain" value="15" step="0.5" /><span>%</span></div>
       </div>
       <div class="field">
-        <label>401K 인출세율 (은퇴 후)</label>
+        <label>401K 인출세율</label>
         <div class="iw"><input type="number" id="t-k401w" value="22" step="0.5" /><span>%</span></div>
       </div>
     </div>
-    <div class="tip" style="border-left-color:#93C5FD;">
-      💡 미국 경제학 교수 기준 실효세율 약 28~32% (연방 24%+주 4~8%)<br>
-      FICA: Social Security 6.2% + Medicare 1.45% = 7.65%
+    <div class="tip blue" style="margin-top:12px">
+      💡 미국 경제학 교수 기준 실효세율 약 28~32%<br>
+      FICA: Social Security 6.2% + Medicare 1.45%
     </div>
   </div>
 
   <!-- 401K -->
   <div class="panel">
     <div class="panel-title purple">// 401K / 403(b) 설정</div>
-    <div class="grid2">
+    <div class="grid2" style="margin-top:16px">
       <div class="field">
         <label>본인 기여율</label>
         <div class="iw"><input type="number" id="k-emp" value="10" step="0.5" /><span>%</span></div>
@@ -265,13 +269,12 @@
       </div>
     </div>
     <div class="k401-summary" id="k401-summary">
-      <div class="row"><span class="lbl">총 기여율 (본인+고용주)</span><span id="k401-total-contrib" style="color:var(--purple)">—</span></div>
-      <div class="row"><span class="lbl">세금 절감 효과 (연소득 대비)</span><span id="k401-tax-saving" style="color:var(--green)">—</span></div>
+      <div class="row"><span class="lbl">총 기여율 (본인+고용주)</span><span id="k401-total-contrib" style="color:var(--purple);font-weight:600">—</span></div>
+      <div class="row"><span class="lbl">세금 절감 효과 (소득 대비)</span><span id="k401-tax-saving" style="color:var(--green);font-weight:600">—</span></div>
     </div>
-    <div class="tip" style="border-left-color:#C4B5FD;">
+    <div class="tip purple" style="margin-top:12px">
       💡 미국 R1 대학 경제학 교수 기준 (TIAA 403b)<br>
-      · 고용주 자동 기여 <b style="color:#C4B5FD">10%</b> (직원 5% 납입 시)<br>
-      · 출처: Butler Univ, CMU, Iowa Univ 등 다수 R1 대학 HR 자료
+      고용주 자동 기여 <b>10%</b> (직원 5% 납입 시)
     </div>
   </div>
 
@@ -292,7 +295,7 @@
       <button class="btn-add red" id="btn-add-expense">+ 추가</button>
     </div>
     <div class="phases-list" id="expense-list"></div>
-    <div class="tip" style="border-left-color:#FDA4AF;">💡 인플레이션은 각 구간 시작 나이 기준 복리 적용</div>
+    <div class="tip red">💡 인플레이션은 각 구간 시작 나이 기준 복리 적용</div>
   </div>
 
 </div><!-- /left -->
@@ -301,10 +304,10 @@
 
   <div class="panel">
     <div class="panel-title">// 자산 곡선</div>
-    <div class="chart-wrap"><canvas id="chart"></canvas></div>
+    <div class="chart-wrap" style="margin-top:16px"><canvas id="chart"></canvas></div>
     <div class="legend">
       <span style="color:var(--amber)">▬ 총자산(세후)</span>
-      <span style="color:var(--purple)">▬ 401K</span>
+      <span style="color:var(--purple)">— 401K</span>
       <span style="color:var(--green)">╌ 세후소득</span>
       <span style="color:var(--red)">╌ 연지출</span>
     </div>
@@ -312,11 +315,11 @@
 
   <div class="panel">
     <div class="panel-title">// 연도별 시뮬레이션</div>
-    <div class="table-scroll">
+    <div class="table-scroll" style="margin-top:16px">
       <table>
         <thead>
           <tr>
-            <th style="text-align:left">나이</th>
+            <th>나이</th>
             <th>세전소득</th>
             <th>세금+FICA</th>
             <th>401K기여</th>
@@ -337,13 +340,13 @@
 
   <div class="panel">
     <div class="panel-title">// 계산 방식</div>
-    <div class="notes">
+    <div class="notes" style="margin-top:12px">
       <div>• <b>401K 기여</b>: 세전 공제 → 과세소득 감소. 고용주 매칭은 급여×매칭률 (상한 적용)</div>
       <div>• <b>세금</b>: (세전소득 − 401K본인기여) × 실효세율 + 총소득 × FICA</div>
-      <div>• <b>과세계좌 투자수익</b>: 자산 × 가중평균수익률 × (1 − 자본이득세율)</div>
-      <div>• <b>401K</b>: 세전 복리 성장 (가중평균수익률). 인출 시 인출세율 적용</div>
-      <div>• <b>총자산(세후)</b>: 과세자산 + 401K × (1 − 인출세율)</div>
-      <div>• <b>FI달성률</b>: 총자산(세후) × 수익률 / 연지출 × 100%</div>
+      <div>• <b>투자수익</b>: 과세자산 × 가중평균수익률 × (1 − 자본이득세율)</div>
+      <div>• <b>401K</b>: 세전 복리 성장. 인출 시 인출세율 적용</div>
+      <div>• <b>총자산(세후)</b>: 과세자산 + 401K잔액 × (1 − 인출세율)</div>
+      <div>• <b>FI달성률</b>: 총자산(세후) × 세후수익률 / 연지출 × 100%</div>
     </div>
   </div>
 
@@ -351,8 +354,11 @@
 </div>
 
 <script>
-const AMBER = '#F59E0B', GREEN = '#10B981', RED = '#EF4444', GRAY = '#6B7280', PURPLE = '#A78BFA', BLUE = '#60A5FA';
+// ── 상수 ──
+const AMBER = '#D97706', GREEN = '#059669', RED = '#DC2626',
+      GRAY = '#6B7280', PURPLE = '#7C3AED', BLUE = '#2563EB';
 
+// ── 상태 ──
 let incomePhases = [
   { id: 1, startAge: 35, endAge: 45, salary: 5000, growth: 5 },
   { id: 2, startAge: 45, endAge: 65, salary: 8000, growth: 3 },
@@ -365,17 +371,20 @@ let expensePhases = [
 let incNextId = 3, expNextId = 4;
 let chartInst = null;
 
-// ── helpers ──
-function n(id) { return parseFloat(document.getElementById(id).value) || 0; }
+// ── 헬퍼 ──
+function n(id) {
+  const el = document.getElementById(id);
+  return el ? (parseFloat(el.value) || 0) : 0;
+}
 function fmt(wan) {
   if (isNaN(wan) || wan === null) return '—';
   const a = Math.abs(wan);
-  if (a >= 10000) return (wan/10000).toFixed(a >= 100000 ? 0 : 1) + '억';
+  if (a >= 10000) return (wan / 10000).toFixed(a >= 100000 ? 0 : 1) + '억';
   if (a >= 1)     return Math.round(wan).toLocaleString() + '만';
   return '0';
 }
 
-// ── blended return ──
+// ── 가중평균 수익률 ──
 function blendedRate() {
   const items = [
     { w: n('a-stock-w'), r: n('a-stock-r') },
@@ -385,26 +394,25 @@ function blendedRate() {
   const tw = items.reduce((s, x) => s + x.w, 0);
   const warn = document.getElementById('weight-warn');
   const el   = document.getElementById('blended-rate');
-  if (!tw) { el.textContent = '—'; warn.style.display='none'; return 0; }
-  warn.style.display = Math.abs(tw-100) > 0.01 ? 'block' : 'none';
-  const b = items.reduce((s, x) => s + (x.w/tw)*x.r, 0);
+  if (!tw) { el.textContent = '—'; warn.style.display = 'none'; return 0; }
+  warn.style.display = Math.abs(tw - 100) > 0.01 ? 'block' : 'none';
+  const b = items.reduce((s, x) => s + (x.w / tw) * x.r, 0);
   el.textContent = b.toFixed(2) + '%';
   return b / 100;
 }
 
-// ── 401K summary update ──
+// ── 401K 요약 갱신 ──
 function update401KSummary() {
   const empPct   = n('k-emp');
   const matchPct = n('k-match');
   const capPct   = n('k-cap');
   const taxRate  = n('t-income') / 100;
-  const totalContrib = empPct + Math.min(matchPct, capPct);
-  document.getElementById('k401-total-contrib').textContent = totalContrib.toFixed(1) + '%';
-  const taxSave = empPct * taxRate;
-  document.getElementById('k401-tax-saving').textContent = taxSave.toFixed(2) + '%';
+  const total    = empPct + Math.min(matchPct, capPct);
+  document.getElementById('k401-total-contrib').textContent = total.toFixed(1) + '%';
+  document.getElementById('k401-tax-saving').textContent   = (empPct * taxRate).toFixed(2) + '%';
 }
 
-// ── simulate ──
+// ── 시뮬레이션 ──
 function simulate() {
   const startAge   = n('i-age');
   const taxableA0  = n('i-asset')     * 10000;
@@ -415,42 +423,43 @@ function simulate() {
   const ficaR      = n('t-fica')    / 100;
   const capGainR   = n('t-capgain') / 100;
   const k401WR     = n('t-k401w')   / 100;
-  const empContrib = n('k-emp')    / 100;
-  const matchRate  = n('k-match')  / 100;
-  const matchCap   = n('k-cap')    / 100;
+  const empContrib = n('k-emp')     / 100;
+  const matchRate  = n('k-match')   / 100;
+  const matchCap   = n('k-cap')     / 100;
   const k401Start  = n('k-age');
-  const savingsR   = n('i-save')   / 100;
+  const savingsR   = n('i-save')    / 100;
 
   let taxableAsset = taxableA0;
   let k401Balance  = k401A0;
   const rows = [];
 
   for (let age = startAge; age <= 100; age++) {
-    // ── 소득 ──
+    // 소득
     let grossIncome = 0;
     for (const ph of incomePhases) {
       if (age >= ph.startAge && age < ph.endAge) {
-        grossIncome = ph.salary * 10000 * 12 * Math.pow(1 + ph.growth/100, age - ph.startAge);
+        grossIncome = ph.salary * 10000 * 12 * Math.pow(1 + ph.growth / 100, age - ph.startAge);
         break;
       }
     }
 
-    // ── 401K 기여 (소득 있을 때만) ──
-    const k401Emp    = grossIncome * empContrib;
-    const k401Match  = grossIncome * Math.min(matchRate, matchCap);
-    const k401Total  = k401Emp + k401Match;
+    // 401K 기여
+    const k401Emp   = grossIncome * empContrib;
+    const k401Match = grossIncome * Math.min(matchRate, matchCap);
+    const k401Total = k401Emp + k401Match;
 
-    // ── 세금 계산 ──
-    const taxableIncome = Math.max(0, grossIncome - k401Emp);
-    const incomeTax     = taxableIncome * incomeTaxR;
-    const fica          = grossIncome * ficaR;
-    const totalTax      = incomeTax + fica;
+    // 세금
+    const taxableIncome  = Math.max(0, grossIncome - k401Emp);
+    const incomeTax      = taxableIncome * incomeTaxR;
+    const fica           = grossIncome * ficaR;
+    const totalTax       = incomeTax + fica;
 
-    // ── 세후 가처분소득 → 저축 ──
+    // 세후 가처분소득
     const afterTaxIncome = Math.max(0, grossIncome - k401Emp - totalTax);
     const savings        = afterTaxIncome * savingsR;
+    const nonSaved       = afterTaxIncome * (1 - savingsR);
 
-    // ── 소비 구간 ──
+    // 소비 구간
     let baseExpense = 0;
     for (const ph of expensePhases) {
       if (age >= ph.startAge && age < ph.endAge) {
@@ -458,48 +467,40 @@ function simulate() {
         break;
       }
     }
-    // 비저축분도 소비
-    const nonSaved  = afterTaxIncome * (1 - savingsR);
-    const expense   = baseExpense + nonSaved;
+    const expense = baseExpense + nonSaved;
 
-    // ── 과세계좌 투자수익 (자본이득세 차감) ──
+    // 과세계좌 투자수익 (자본이득세 차감)
     const taxableGain = taxableAsset * ir * (1 - capGainR);
 
-    // ── 401K 성장 (세전 복리) ──
+    // 401K 성장
     const k401Gain = k401Balance * ir;
 
-    // ── 401K 인출 (은퇴 후) ──
-    // 은퇴 후 401K 수익으로 생활비 충당, 인출세 납부
+    // 401K 인출 (은퇴 후 부족분 보충)
     let k401Withdrawal = 0;
     if (age >= k401Start && grossIncome === 0 && k401Balance > 0) {
-      // 생활비만큼 인출 (필요 시)
-      const needed = Math.max(0, expense - taxableGain - savings);
-      const rawWithdrawal = needed > 0 ? needed / (1 - k401WR) : 0;
-      k401Withdrawal = Math.min(rawWithdrawal, k401Balance);
+      const needed = Math.max(0, expense - (taxableGain + savings));
+      if (needed > 0) k401Withdrawal = Math.min(needed / (1 - k401WR), k401Balance);
     }
-    const k401AfterTaxWithdrawal = k401Withdrawal * (1 - k401WR);
+    const k401AfterTax = k401Withdrawal * (1 - k401WR);
 
-    // ── 자산 갱신 ──
-    const netTaxable = savings + taxableGain - Math.max(0, expense - k401AfterTaxWithdrawal - taxableGain - savings);
-    taxableAsset += savings + taxableGain - expense + k401AfterTaxWithdrawal;
+    // 자산 갱신
+    taxableAsset += savings + taxableGain - expense + k401AfterTax;
     if (taxableAsset < 0) taxableAsset = 0;
 
     k401Balance += k401Total + k401Gain - k401Withdrawal;
     if (k401Balance < 0) k401Balance = 0;
 
-    // ── 총자산 세후 ──
+    // 총자산 세후
     const totalAfterTax = taxableAsset + k401Balance * (1 - k401WR);
-    const net           = (savings + taxableGain + k401AfterTaxWithdrawal) - expense;
-
-    // ── FI 비율 ──
-    const effectiveIR = ir * (1 - capGainR);
-    const fiRatio     = expense > 0 ? (totalAfterTax * effectiveIR) / expense : 0;
+    const net           = savings + taxableGain + k401AfterTax - expense;
+    const effectiveIR   = ir * (1 - capGainR);
+    const fiRatio       = expense > 0 ? (totalAfterTax * effectiveIR) / expense : 0;
 
     rows.push({
       age, grossIncome, totalTax, k401Total, savings,
       taxableGain, expense, net,
       taxableAsset, k401Balance,
-      totalAfterTax: totalAfterTax > 0 ? totalAfterTax : 0,
+      totalAfterTax: Math.max(totalAfterTax, 0),
       totalRaw: totalAfterTax,
       fiRatio,
     });
@@ -507,154 +508,183 @@ function simulate() {
   return rows;
 }
 
-// ── chart plugin ──
+// ── 차트 플러그인 (수직선) ──
 const refLinesPlugin = {
   id: 'refLines',
   afterDatasetsDraw(chart, _, opts) {
-    if (!opts?.lines?.length) return;
+    if (!opts || !opts.lines || !opts.lines.length) return;
     const { ctx, scales: { x, y } } = chart;
     ctx.save();
     opts.lines.forEach((line, i) => {
       const px = x.getPixelForValue(line.value);
       if (px < x.left || px > x.right) return;
-      ctx.setLineDash([4,3]); ctx.lineWidth=1.5; ctx.strokeStyle=line.color;
-      ctx.beginPath(); ctx.moveTo(px,y.top); ctx.lineTo(px,y.bottom); ctx.stroke();
-      ctx.setLineDash([]); ctx.fillStyle=line.color;
-      ctx.font="10px 'IBM Plex Mono',monospace";
-      ctx.fillText(line.label, px+5, y.top+14+i*16);
+      ctx.setLineDash([5, 3]);
+      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = line.color;
+      ctx.beginPath(); ctx.moveTo(px, y.top); ctx.lineTo(px, y.bottom); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = line.color;
+      ctx.font = "10px 'IBM Plex Mono', monospace";
+      ctx.fillText(line.label, px + 5, y.top + 14 + i * 16);
     });
     ctx.restore();
   }
 };
 Chart.register(refLinesPlugin);
 
-// ── render chart ──
+// ── 차트 렌더 ──
 function renderChart(rows) {
   const targetAge = n('i-target');
   const fiAge     = rows.find(r => r.fiRatio >= 1)?.age;
   const vis       = rows.filter(r => r.age <= 85);
 
   const refLines = [];
-  if (fiAge)     refLines.push({ value: fiAge,     color: GREEN, label: `FI ${fiAge}세` });
-  if (targetAge) refLines.push({ value: targetAge, color: AMBER, label: `목표 ${targetAge}세` });
+  if (fiAge)     refLines.push({ value: fiAge,     color: GREEN, label: 'FI ' + fiAge + '세' });
+  if (targetAge) refLines.push({ value: targetAge, color: AMBER, label: '목표 ' + targetAge + '세' });
 
   const chartData = {
     labels: vis.map(r => r.age),
     datasets: [
       {
-        label: '총자산(세후)', data: vis.map(r => Math.round(r.totalAfterTax/10000)),
+        label: '총자산(세후)',
+        data: vis.map(r => Math.round(r.totalAfterTax / 10000)),
         borderColor: AMBER, borderWidth: 2,
-        backgroundColor: ctx => { const g=ctx.chart.ctx.createLinearGradient(0,0,0,280); g.addColorStop(0,'rgba(245,158,11,.25)'); g.addColorStop(1,'rgba(245,158,11,0)'); return g; },
+        backgroundColor: function(ctx) {
+          const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, 280);
+          g.addColorStop(0, 'rgba(217,119,6,.18)');
+          g.addColorStop(1, 'rgba(217,119,6,0)');
+          return g;
+        },
         fill: true, tension: 0.4, pointRadius: 0, order: 1,
       },
       {
-        label: '401K잔액', data: vis.map(r => Math.round(r.k401Balance/10000)),
-        borderColor: PURPLE, borderWidth: 1.5, borderDash: [3,2],
+        label: '401K잔액',
+        data: vis.map(r => Math.round(r.k401Balance / 10000)),
+        borderColor: PURPLE, borderWidth: 1.5, borderDash: [4, 2],
         backgroundColor: 'transparent', fill: false, tension: 0.4, pointRadius: 0, order: 2,
       },
       {
-        label: '세후소득', data: vis.map(r => Math.round((r.grossIncome-r.totalTax-r.k401Total)/10000)),
-        borderColor: GREEN, borderWidth: 1.5, borderDash: [4,2],
+        label: '세후소득',
+        data: vis.map(r => Math.round((r.grossIncome - r.totalTax - r.k401Total) / 10000)),
+        borderColor: GREEN, borderWidth: 1.5, borderDash: [4, 2],
         backgroundColor: 'transparent', fill: false, tension: 0.3, pointRadius: 0, order: 3,
       },
       {
-        label: '연지출', data: vis.map(r => Math.round(r.expense/10000)),
-        borderColor: RED, borderWidth: 1.5, borderDash: [4,2],
+        label: '연지출',
+        data: vis.map(r => Math.round(r.expense / 10000)),
+        borderColor: RED, borderWidth: 1.5, borderDash: [4, 2],
         backgroundColor: 'transparent', fill: false, tension: 0.3, pointRadius: 0, order: 4,
       },
     ]
   };
 
-  const opts = {
+  const chartOpts = {
     responsive: true, maintainAspectRatio: false, animation: { duration: 150 },
     interaction: { mode: 'index', intersect: false },
     plugins: {
       legend: { display: false },
       tooltip: {
         backgroundColor: '#FFFFFF', borderColor: '#E2E8F0', borderWidth: 1,
-        titleFont: { family:"'IBM Plex Mono'", size:11 },
-        bodyFont:  { family:"'IBM Plex Mono'", size:11 },
+        titleColor: '#1E293B', bodyColor: '#475569',
+        titleFont: { family: "'IBM Plex Mono'", size: 11 },
+        bodyFont:  { family: "'IBM Plex Mono'", size: 11 },
         callbacks: {
-          title: i => `만 ${i[0].label}세`,
-          label: i => { const v=i.raw; return ` ${i.dataset.label}: ${Math.abs(v)>=10000?(v/10000).toFixed(1)+'억':v.toLocaleString()+'만'}원`; }
+          title: function(items) { return '만 ' + items[0].label + '세'; },
+          label: function(item) {
+            const v = item.raw;
+            const s = Math.abs(v) >= 10000 ? (v / 10000).toFixed(1) + '억' : v.toLocaleString() + '만';
+            return ' ' + item.dataset.label + ': ' + s + '원';
+          }
         }
       },
       refLines: { lines: refLines },
     },
     scales: {
-      x: { type:'linear', min: rows[0]?.age??25, max:85, border:{display:false}, grid:{color:'#F1F5F9'},
-           ticks:{color:GRAY,font:{family:"'IBM Plex Mono'",size:10},maxTicksLimit:12,callback:v=>v+'세'} },
-      y: { border:{display:false}, grid:{color:'#F1F5F9'},
-           ticks:{color:GRAY,font:{family:"'IBM Plex Mono'",size:10},
-             callback:v=>Math.abs(v)>=10000?(v/10000).toFixed(0)+'억':v.toLocaleString()+'만'} }
+      x: {
+        type: 'linear', min: rows[0] ? rows[0].age : 25, max: 85,
+        border: { display: false }, grid: { color: '#F1F5F9' },
+        ticks: { color: GRAY, font: { family: "'IBM Plex Mono'", size: 10 }, maxTicksLimit: 12, callback: function(v) { return v + '세'; } }
+      },
+      y: {
+        border: { display: false }, grid: { color: '#F1F5F9' },
+        ticks: {
+          color: GRAY, font: { family: "'IBM Plex Mono'", size: 10 },
+          callback: function(v) { return Math.abs(v) >= 10000 ? (v / 10000).toFixed(0) + '억' : v.toLocaleString() + '만'; }
+        }
+      }
     }
   };
 
-  if (chartInst) { chartInst.data=chartData; chartInst.options=opts; chartInst.update('none'); }
-  else { chartInst = new Chart(document.getElementById('chart'), { type:'line', data:chartData, options:opts }); }
+  if (chartInst) {
+    chartInst.data    = chartData;
+    chartInst.options = chartOpts;
+    chartInst.update('none');
+  } else {
+    chartInst = new Chart(document.getElementById('chart'), { type: 'line', data: chartData, options: chartOpts });
+  }
 }
 
-// ── render table ──
+// ── 테이블 렌더 ──
 function renderTable(rows) {
   const targetAge = n('i-target');
   const fiAge     = rows.find(r => r.fiRatio >= 1)?.age;
   const tbody     = document.getElementById('tbody');
   tbody.innerHTML = '';
 
-  rows.forEach(r => {
-    const isFI = !!(fiAge && r.age === fiAge);
-    const isTgt = r.age === targetAge;
+  rows.forEach(function(r) {
+    const isFI       = !!(fiAge && r.age === fiAge);
+    const isTgt      = r.age === targetAge;
     const isBankrupt = r.totalRaw < 0;
-    const fiPct = r.fiRatio * 100;
+    const fiPct      = r.fiRatio * 100;
 
     const tr = document.createElement('tr');
     if (isFI)       tr.style.background = '#ECFDF5';
     else if (isTgt) tr.style.background = '#FFFBEB';
 
-    const ageLbl  = r.age + '세' + (isFI?' ✓FI':isTgt?' ★':'');
-    const ageClr  = isFI?GREEN:isTgt?AMBER:'#CBD5E1';
-    const fiClr   = fiPct>=100?GREEN:fiPct>=70?AMBER:GRAY;
-    const netClr  = r.net>=0?GREEN:RED;
-    const totalTxt = isBankrupt?`<span style="color:${RED}">파산</span>`:fmt(r.totalAfterTax/10000);
+    const ageLbl  = r.age + '세' + (isFI ? ' ✓FI' : isTgt ? ' ★' : '');
+    const ageClr  = isFI ? GREEN : isTgt ? AMBER : '#1E293B';
+    const fiClr   = fiPct >= 100 ? GREEN : fiPct >= 70 ? AMBER : GRAY;
+    const netClr  = r.net >= 0 ? GREEN : RED;
+    const totalTxt = isBankrupt ? '<span style="color:' + RED + '">파산</span>' : fmt(r.totalAfterTax / 10000);
 
-    tr.innerHTML = `
-      <td style="color:${ageClr};font-weight:${isFI||isTgt?600:400}">${ageLbl}</td>
-      <td style="color:${r.grossIncome>0?'#CBD5E1':GRAY}">${fmt(r.grossIncome/10000)}</td>
-      <td style="color:${RED}CC">${fmt(r.totalTax/10000)}</td>
-      <td style="color:${PURPLE}CC">${fmt(r.k401Total/10000)}</td>
-      <td style="color:${r.savings>0?GREEN+'CC':GRAY}">${fmt(r.savings/10000)}</td>
-      <td style="color:${AMBER}CC">${fmt(r.taxableGain/10000)}</td>
-      <td style="color:#94A3B8">${fmt(r.expense/10000)}</td>
-      <td style="color:${netClr}">${fmt(r.net/10000)}</td>
-      <td style="color:#E2E8F0">${fmt(r.taxableAsset/10000)}</td>
-      <td style="color:${PURPLE}">${fmt(r.k401Balance/10000)}</td>
-      <td style="color:${isBankrupt?RED:'#F8FAFC'};font-weight:500">${totalTxt}</td>
-      <td style="color:${fiClr};font-weight:${fiPct>=100?600:400}">${Math.round(fiPct)}%</td>
-    `;
+    tr.innerHTML =
+      '<td style="color:' + ageClr + ';font-weight:' + (isFI || isTgt ? 600 : 400) + '">' + ageLbl + '</td>' +
+      '<td>' + fmt(r.grossIncome / 10000) + '</td>' +
+      '<td style="color:' + RED + '">' + fmt(r.totalTax / 10000) + '</td>' +
+      '<td style="color:' + PURPLE + '">' + fmt(r.k401Total / 10000) + '</td>' +
+      '<td style="color:' + GREEN + '">' + fmt(r.savings / 10000) + '</td>' +
+      '<td style="color:' + AMBER + '">' + fmt(r.taxableGain / 10000) + '</td>' +
+      '<td style="color:#64748B">' + fmt(r.expense / 10000) + '</td>' +
+      '<td style="color:' + netClr + ';font-weight:500">' + fmt(r.net / 10000) + '</td>' +
+      '<td>' + fmt(r.taxableAsset / 10000) + '</td>' +
+      '<td style="color:' + PURPLE + '">' + fmt(r.k401Balance / 10000) + '</td>' +
+      '<td style="color:' + (isBankrupt ? RED : '#0F172A') + ';font-weight:600">' + totalTxt + '</td>' +
+      '<td style="color:' + fiClr + ';font-weight:' + (fiPct >= 100 ? 600 : 400) + '">' + Math.round(fiPct) + '%</td>';
+
     tbody.appendChild(tr);
   });
 }
 
-// ── render cards ──
+// ── 카드 렌더 ──
 function renderCards(rows) {
   const fiAge    = rows.find(r => r.fiRatio >= 1)?.age;
   const bkAge    = rows.find(r => r.totalRaw < 0)?.age;
-  const maxTotal = Math.max(...rows.map(r => r.totalAfterTax));
-  const maxK401  = Math.max(...rows.map(r => r.k401Balance));
+  const maxTotal = Math.max.apply(null, rows.map(r => r.totalAfterTax));
+  const maxK401  = Math.max.apply(null, rows.map(r => r.k401Balance));
 
   const cFi = document.getElementById('card-fi');
-  cFi.textContent = fiAge ? '만 '+fiAge+'세' : '미달성';
+  cFi.textContent = fiAge ? '만 ' + fiAge + '세' : '미달성';
   cFi.style.color = fiAge ? GREEN : GRAY;
 
-  document.getElementById('card-max').textContent  = fmt(maxTotal/10000);
-  document.getElementById('card-k401').textContent = fmt(maxK401/10000);
+  document.getElementById('card-max').textContent  = fmt(maxTotal / 10000);
+  document.getElementById('card-k401').textContent = fmt(maxK401 / 10000);
 
   const cBk = document.getElementById('card-bankrupt');
-  cBk.textContent = bkAge ? '만 '+bkAge+'세' : '100세 유지';
+  cBk.textContent = bkAge ? '만 ' + bkAge + '세' : '100세 유지';
   cBk.style.color = bkAge ? RED : GREEN;
 }
 
-// ── master update ──
+// ── 전체 업데이트 ──
 function update() {
   update401KSummary();
   const rows = simulate();
@@ -663,97 +693,103 @@ function update() {
   renderTable(rows);
 }
 
-// ── phase UI ──
+// ── 소득 구간 UI ──
 function renderIncomePhases() {
   const list = document.getElementById('income-list');
   list.innerHTML = '';
-  incomePhases.forEach((ph, i) => {
+  incomePhases.forEach(function(ph, i) {
     const d = document.createElement('div');
     d.className = 'phase-card';
-    d.innerHTML = `
-      <div class="phase-card-hdr">
-        <span class="phase-lbl income">소득 구간 ${i+1}</span>
-        ${incomePhases.length>1?`<button class="btn-rm" data-type="income" data-id="${ph.id}">×</button>`:''}
-      </div>
-      <div class="phase-grid">
-        <div class="field"><label>시작 나이</label>
-          <div class="iw"><input type="number" value="${ph.startAge}" data-type="income" data-id="${ph.id}" data-key="startAge"/><span>세</span></div></div>
-        <div class="field"><label>종료 나이</label>
-          <div class="iw"><input type="number" value="${ph.endAge}" data-type="income" data-id="${ph.id}" data-key="endAge"/><span>세</span></div></div>
-        <div class="field"><label>기본 월급</label>
-          <div class="iw"><input type="number" value="${ph.salary}" data-type="income" data-id="${ph.id}" data-key="salary"/><span>만원</span></div></div>
-        <div class="field"><label>연 성장률</label>
-          <div class="iw"><input type="number" value="${ph.growth}" step="0.1" data-type="income" data-id="${ph.id}" data-key="growth"/><span>%</span></div></div>
-      </div>`;
+    d.innerHTML =
+      '<div class="phase-card-hdr">' +
+        '<span class="phase-lbl income">소득 구간 ' + (i + 1) + '</span>' +
+        (incomePhases.length > 1 ? '<button class="btn-rm" data-type="income" data-id="' + ph.id + '">×</button>' : '') +
+      '</div>' +
+      '<div class="phase-grid">' +
+        '<div class="field"><label>시작 나이</label><div class="iw"><input type="number" value="' + ph.startAge + '" data-type="income" data-id="' + ph.id + '" data-key="startAge"/><span>세</span></div></div>' +
+        '<div class="field"><label>종료 나이</label><div class="iw"><input type="number" value="' + ph.endAge + '" data-type="income" data-id="' + ph.id + '" data-key="endAge"/><span>세</span></div></div>' +
+        '<div class="field"><label>기본 월급</label><div class="iw"><input type="number" value="' + ph.salary + '" data-type="income" data-id="' + ph.id + '" data-key="salary"/><span>만원</span></div></div>' +
+        '<div class="field"><label>연 성장률</label><div class="iw"><input type="number" value="' + ph.growth + '" step="0.1" data-type="income" data-id="' + ph.id + '" data-key="growth"/><span>%</span></div></div>' +
+      '</div>';
     list.appendChild(d);
   });
 }
 
+// ── 소비 구간 UI ──
 function renderExpensePhases() {
   const list = document.getElementById('expense-list');
   list.innerHTML = '';
-  expensePhases.forEach((ph, i) => {
+  expensePhases.forEach(function(ph, i) {
     const d = document.createElement('div');
     d.className = 'phase-card';
-    d.style.borderColor = '#3f1a1a';
-    d.innerHTML = `
-      <div class="phase-card-hdr">
-        <span class="phase-lbl expense">소비 구간 ${i+1}</span>
-        ${expensePhases.length>1?`<button class="btn-rm" data-type="expense" data-id="${ph.id}">×</button>`:''}
-      </div>
-      <div class="phase-grid">
-        <div class="field"><label>시작 나이</label>
-          <div class="iw"><input type="number" value="${ph.startAge}" data-type="expense" data-id="${ph.id}" data-key="startAge"/><span>세</span></div></div>
-        <div class="field"><label>종료 나이</label>
-          <div class="iw"><input type="number" value="${ph.endAge}" data-type="expense" data-id="${ph.id}" data-key="endAge"/><span>세</span></div></div>
-        <div class="field span2"><label>월 생활비</label>
-          <div class="iw"><input type="number" value="${ph.monthly}" data-type="expense" data-id="${ph.id}" data-key="monthly"/><span>만원</span></div></div>
-      </div>`;
+    d.style.borderColor = '#FECACA';
+    d.innerHTML =
+      '<div class="phase-card-hdr">' +
+        '<span class="phase-lbl expense">소비 구간 ' + (i + 1) + '</span>' +
+        (expensePhases.length > 1 ? '<button class="btn-rm" data-type="expense" data-id="' + ph.id + '">×</button>' : '') +
+      '</div>' +
+      '<div class="phase-grid">' +
+        '<div class="field"><label>시작 나이</label><div class="iw"><input type="number" value="' + ph.startAge + '" data-type="expense" data-id="' + ph.id + '" data-key="startAge"/><span>세</span></div></div>' +
+        '<div class="field"><label>종료 나이</label><div class="iw"><input type="number" value="' + ph.endAge + '" data-type="expense" data-id="' + ph.id + '" data-key="endAge"/><span>세</span></div></div>' +
+        '<div class="field" style="grid-column:1/-1"><label>월 생활비</label><div class="iw"><input type="number" value="' + ph.monthly + '" data-type="expense" data-id="' + ph.id + '" data-key="monthly"/><span>만원</span></div></div>' +
+      '</div>';
     list.appendChild(d);
   });
 }
 
-// ── delegated events ──
-document.getElementById('income-list').addEventListener('input', e => {
-  const inp=e.target; if(!inp.dataset.id) return;
-  const id=parseInt(inp.dataset.id),key=inp.dataset.key,v=parseFloat(inp.value)||0;
-  incomePhases=incomePhases.map(p=>p.id===id?{...p,[key]:v}:p); update();
+// ── 이벤트 위임 ──
+document.getElementById('income-list').addEventListener('input', function(e) {
+  const inp = e.target;
+  if (!inp.dataset.id) return;
+  const id = parseInt(inp.dataset.id), key = inp.dataset.key, v = parseFloat(inp.value) || 0;
+  incomePhases = incomePhases.map(function(p) { return p.id === id ? Object.assign({}, p, { [key]: v }) : p; });
+  update();
 });
-document.getElementById('income-list').addEventListener('click', e => {
-  const btn=e.target.closest('.btn-rm[data-type="income"]'); if(!btn) return;
-  incomePhases=incomePhases.filter(p=>p.id!==parseInt(btn.dataset.id));
+document.getElementById('income-list').addEventListener('click', function(e) {
+  const btn = e.target.closest('.btn-rm[data-type="income"]');
+  if (!btn) return;
+  incomePhases = incomePhases.filter(function(p) { return p.id !== parseInt(btn.dataset.id); });
   renderIncomePhases(); update();
 });
-document.getElementById('btn-add-income').addEventListener('click', ()=>{
-  const last=incomePhases[incomePhases.length-1];
-  const s=last?last.endAge:35;
-  incomePhases.push({id:incNextId++,startAge:s,endAge:s+10,salary:last?.salary??5000,growth:3});
+document.getElementById('btn-add-income').addEventListener('click', function() {
+  const last = incomePhases[incomePhases.length - 1];
+  const s = last ? last.endAge : 35;
+  incomePhases.push({ id: incNextId++, startAge: s, endAge: s + 10, salary: last ? last.salary : 5000, growth: 3 });
   renderIncomePhases(); update();
 });
 
-document.getElementById('expense-list').addEventListener('input', e => {
-  const inp=e.target; if(!inp.dataset.id) return;
-  const id=parseInt(inp.dataset.id),key=inp.dataset.key,v=parseFloat(inp.value)||0;
-  expensePhases=expensePhases.map(p=>p.id===id?{...p,[key]:v}:p); update();
+document.getElementById('expense-list').addEventListener('input', function(e) {
+  const inp = e.target;
+  if (!inp.dataset.id) return;
+  const id = parseInt(inp.dataset.id), key = inp.dataset.key, v = parseFloat(inp.value) || 0;
+  expensePhases = expensePhases.map(function(p) { return p.id === id ? Object.assign({}, p, { [key]: v }) : p; });
+  update();
 });
-document.getElementById('expense-list').addEventListener('click', e => {
-  const btn=e.target.closest('.btn-rm[data-type="expense"]'); if(!btn) return;
-  expensePhases=expensePhases.filter(p=>p.id!==parseInt(btn.dataset.id));
+document.getElementById('expense-list').addEventListener('click', function(e) {
+  const btn = e.target.closest('.btn-rm[data-type="expense"]');
+  if (!btn) return;
+  expensePhases = expensePhases.filter(function(p) { return p.id !== parseInt(btn.dataset.id); });
   renderExpensePhases(); update();
 });
-document.getElementById('btn-add-expense').addEventListener('click', ()=>{
-  const last=expensePhases[expensePhases.length-1];
-  const s=last?last.endAge:25;
-  expensePhases.push({id:expNextId++,startAge:s,endAge:s+10,monthly:last?.monthly??200});
+document.getElementById('btn-add-expense').addEventListener('click', function() {
+  const last = expensePhases[expensePhases.length - 1];
+  const s = last ? last.endAge : 25;
+  expensePhases.push({ id: expNextId++, startAge: s, endAge: s + 10, monthly: last ? last.monthly : 200 });
   renderExpensePhases(); update();
 });
 
-['i-age','i-target','i-asset','i-k401-init','i-infl','i-save',
- 'a-stock-w','a-stock-r','a-re-w','a-re-r','a-cash-w','a-cash-r',
- 't-income','t-fica','t-capgain','t-k401w',
- 'k-emp','k-match','k-cap','k-age'
-].forEach(id => document.getElementById(id).addEventListener('input', update));
+// 기본 인풋들
+[
+  'i-age', 'i-target', 'i-asset', 'i-k401-init', 'i-infl', 'i-save',
+  'a-stock-w', 'a-stock-r', 'a-re-w', 'a-re-r', 'a-cash-w', 'a-cash-r',
+  't-income', 't-fica', 't-capgain', 't-k401w',
+  'k-emp', 'k-match', 'k-cap', 'k-age'
+].forEach(function(id) {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', update);
+});
 
+// ── 초기화 ──
 renderIncomePhases();
 renderExpensePhases();
 update();
